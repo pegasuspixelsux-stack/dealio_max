@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { HandCoins, LifeBuoy, ShieldCheck, Tag } from "lucide-react";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 
-const SHOWROOM_IMAGE = "/showroom.jfif";
+const SHOWROOM_IMAGE = "/showroom.jpg";
 
 const PILLARS = [
   {
