@@ -93,11 +93,11 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
 
           {/* Mobile Layout: 2-column grid */}
           <div className="block sm:hidden">
-            <div className="mb-3">
-              <SocialProofBadge rating={4.5} simplified />
-            </div>
             <div className="grid grid-cols-2 gap-4 items-center">
               <div className="flex flex-col gap-2">
+                <div className="mb-1">
+                  <SocialProofBadge rating={4.5} simplified />
+                </div>
                 <h1 className="font-heading text-xl font-bold leading-tight text-white">
                   Excelencia<br />Automotriz.
                 </h1>
