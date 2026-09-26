@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { easeOut } from "@/lib/motion";
 
 const NAV_LINKS = [
@@ -16,6 +16,7 @@ const NAV_LINKS = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -74,16 +75,30 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden items-center gap-4 lg:flex">
-          <a
-            href="/#contact"
-            className="inline-flex h-10 items-center rounded-none bg-primary px-5 text-[0.85rem] font-medium text-primary-foreground transition-transform duration-200 ease-out hover:scale-[1.03] active:scale-[0.97]"
-          >
-            💵 Sell / Trade
-          </a>
+        <div className="hidden items-center gap-3 lg:flex">
+          <div className="relative w-64">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted pointer-events-none" />
+            <input
+              type="text"
+              placeholder="Buscar vehículos..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full h-10 rounded-none border border-border-strong bg-surface/50 pl-10 pr-4 text-[0.9rem] text-foreground placeholder:text-muted-2 transition-all duration-200 focus-visible:border-foreground/50 focus-visible:outline-none hover:bg-surface/70"
+            />
+          </div>
         </div>
 
         <div className="flex items-center gap-3 lg:hidden">
+          <div className="relative hidden md:block w-48">
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted pointer-events-none" />
+            <input
+              type="text"
+              placeholder="Buscar..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full h-10 rounded-none border border-border-strong bg-surface/50 pl-10 pr-4 text-[0.85rem] text-foreground placeholder:text-muted-2 transition-all duration-200 focus-visible:border-foreground/50 focus-visible:outline-none hover:bg-surface/70"
+            />
+          </div>
           <button
             type="button"
             aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
@@ -119,15 +134,6 @@ export function Navbar() {
                   </a>
                 </li>
               ))}
-              <li className="pt-4">
-                <a
-                  href="/#contact"
-                  onClick={() => setMenuOpen(false)}
-                  className="flex h-11 w-full items-center justify-center rounded-none bg-primary text-[0.9rem] font-medium text-primary-foreground"
-                >
-                  💵 Sell / Trade
-                </a>
-              </li>
             </ul>
           </motion.div>
         )}
