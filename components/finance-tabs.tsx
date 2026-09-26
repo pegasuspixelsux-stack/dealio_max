@@ -36,8 +36,8 @@ export function FinanceTabs() {
         >
           <div className="flex flex-col gap-3">
             <p className="text-[0.9rem] font-medium text-muted">Soluciones de Financiamiento</p>
-            <h2 className="text-balance font-heading text-2xl font-normal tracking-tight text-foreground sm:text-4xl">
-              Simule su Financiación o Tasación y Permutas
+            <h2 className="text-balance font-heading text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Simule su Financiación o <span className="text-primary">Tasación y Permutas</span>
             </h2>
           </div>
 

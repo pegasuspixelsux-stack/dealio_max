@@ -29,9 +29,9 @@ export function PreFooterHero() {
       >
         <motion.h2
           variants={fadeUp}
-          className="text-balance font-heading text-3xl font-normal leading-tight tracking-tight text-foreground sm:text-5xl"
+          className="text-balance font-heading text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl"
         >
-          ¿Listo para su próxima experiencia al volante?
+          ¿Listo para su próxima <span className="text-primary">Experiencia al Volante?</span>
         </motion.h2>
 
         <motion.p variants={fadeUp} className="max-w-md text-[1rem] text-muted">

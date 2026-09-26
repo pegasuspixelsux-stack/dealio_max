@@ -405,6 +405,27 @@ export function CarCard({
             <span className="text-muted/50">•</span>
             <span>{FUEL_TYPE_LABELS[car.fuelType] ?? car.fuelType}</span>
           </div>
+
+          {/* Row 3.5: Trust badges / tags */}
+          <div className={`flex flex-wrap gap-1.5 pt-1 ${
+            isCompact ? "hidden" : mobileList ? "md:flex" : "flex"
+          }`}>
+            <span className={`inline-block rounded-sm border border-primary/30 bg-primary/10 px-2 py-1 font-medium text-primary ${
+              isCompact ? "text-[0.5rem]" : mobileList ? "text-[0.6rem] md:text-[0.65rem]" : "text-[0.65rem]"
+            }`}>
+              Inspección Rigurosa
+            </span>
+            <span className={`inline-block rounded-sm border border-primary/30 bg-primary/10 px-2 py-1 font-medium text-primary ${
+              isCompact ? "text-[0.5rem]" : mobileList ? "text-[0.6rem] md:text-[0.65rem]" : "text-[0.65rem]"
+            }`}>
+              Único Dueño
+            </span>
+            <span className={`inline-block rounded-sm border border-primary/30 bg-primary/10 px-2 py-1 font-medium text-primary ${
+              isCompact ? "text-[0.5rem]" : mobileList ? "text-[0.6rem] md:text-[0.65rem]" : "text-[0.65rem]"
+            }`}>
+              Historial Verificado
+            </span>
+          </div>
         </div>
 
         {/* Bottom group: Pricing and Disclaimer */}

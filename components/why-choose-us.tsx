@@ -52,9 +52,9 @@ export function WhyChooseUs() {
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="text-balance font-heading text-2xl font-normal leading-tight tracking-tight text-foreground sm:text-4xl"
+              className="text-balance font-heading text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl"
             >
-              Por Qué Elegir Rodolfo Etchevarría
+              Por Qué Elegir <span className="text-primary">Rodolfo Etchevarría</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="max-w-lg text-[0.98rem] leading-relaxed text-foreground/80">
               Más que una transacción, construimos una relación de confianza duradera. Cada vehículo en nuestro salón es seleccionado bajo los más estrictos estándares de calidad, estética y funcionamiento.

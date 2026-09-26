@@ -89,8 +89,8 @@ export function ContactSection({ initialSettings }: { initialSettings?: SiteSett
           className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16"
         >
           <motion.div variants={fadeUp} className="flex flex-col justify-center gap-4">
-            <h2 className="font-heading text-2xl font-normal tracking-tight text-foreground sm:text-4xl">
-              Inicie su Consulta
+            <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Inicie su <span className="text-primary">Consulta</span>
             </h2>
             <p className="max-w-md text-[0.95rem] leading-relaxed text-muted">
               Permítanos asesorarle de manera personalizada. Visite nuestro salón o comuníquese con nuestro equipo. Estamos disponibles para responder sus consultas en todo momento.
