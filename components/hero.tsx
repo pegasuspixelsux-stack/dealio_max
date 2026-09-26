@@ -80,15 +80,15 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 text-left">
           {/* Desktop Layout: Single column on left */}
           <div className="hidden sm:block w-1/2">
+            <div className="mb-4">
+              <SocialProofBadge rating={4.5} reviewCount={1200} />
+            </div>
             <h1 className="font-heading text-2xl font-bold leading-tight text-white sm:text-3xl">
               Excelencia Automotriz. <span className="text-primary">Sin Complicaciones.</span>
             </h1>
             <p className="text-[0.95rem] leading-relaxed text-white/90">
               Una cuidada selección de vehículos que combinan diseño, rendimiento y absoluta tranquilidad para su próximo camino.
             </p>
-            <div className="mt-4">
-              <SocialProofBadge rating={4.5} reviewCount={1200} />
-            </div>
           </div>
 
           {/* Mobile Layout: 2-column grid */}
