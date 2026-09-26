@@ -10,27 +10,27 @@ const SHOWROOM_IMAGE = "/showroom.jpg";
 const PILLARS = [
   {
     icon: ShieldCheck,
-    title: "Verified History",
+    title: "Curación Rigurosa",
     description:
-      "Complete vehicle history reports and transparent accident records for every vehicle in our inventory.",
+      "Unidades revisadas minuciosamente para garantizar un desempeño óptimo.",
   },
   {
     icon: HandCoins,
-    title: "Flexible Financing",
+    title: "Transparencia Absoluta",
     description:
-      "Multiple financing options tailored to your budget, with competitive rates and transparent terms.",
+      "Asesoramiento honesto y claro en cada etapa del proceso.",
   },
   {
     icon: Tag,
-    title: "Inspected Quality",
+    title: "Respaldo y Trayectoria",
     description:
-      "Every vehicle passes rigorous multi-point inspections ensuring you drive home with confidence.",
+      "Acompañamiento profesional antes, durante y después de su compra.",
   },
   {
     icon: LifeBuoy,
     title: "Permutas Instantáneos",
     description:
-      "Get an immediate valuation for your current vehicle and apply it directly to your purchase.",
+      "Tasación inmediata de su vehículo actual, aplicado directamente a su compra.",
   },
 ];
 
@@ -54,13 +54,13 @@ export function WhyChooseUs() {
               variants={fadeUp}
               className="text-balance font-heading text-2xl font-normal leading-tight tracking-tight text-foreground sm:text-4xl"
             >
-              Why Choose Rodolfo Etchevarria
+              Por Qué Elegir Rodolfo Etchevarría
             </motion.h2>
             <motion.p variants={fadeUp} className="max-w-lg text-[0.98rem] leading-relaxed text-foreground/80">
-              At Rodolfo Etchevarria, we believe buying a vehicle should be an exciting, transparent experience — not a stressful negotiation. Every car in our inventory undergoes rigorous inspection, and we price fairly with zero hidden costs.
+              Más que una transacción, construimos una relación de confianza duradera. Cada vehículo en nuestro salón es seleccionado bajo los más estrictos estándares de calidad, estética y funcionamiento.
             </motion.p>
             <motion.p variants={fadeUp} className="max-w-lg text-[0.98rem] leading-relaxed text-foreground/80">
-              Whether you're financing your purchase or trading in your current vehicle, our team is here to guide you every step of the way. We're committed to finding the perfect car at terms that work for you.
+              Desde la primera consulta hasta el mantenimiento posterior, nuestro equipo de especialistas le acompaña en cada paso. Nos comprometemos a encontrar el vehículo perfecto con términos que se adapten a sus necesidades.
             </motion.p>
           </motion.div>
 

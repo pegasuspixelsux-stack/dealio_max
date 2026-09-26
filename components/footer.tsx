@@ -49,9 +49,7 @@ export function Footer() {
               Rodolfo Etchevarria
             </span>
             <p className="max-w-xs text-[0.9rem] leading-relaxed text-muted">
-              Una concesionaria curada de sedanes, SUVs y vehículos de alto
-              rendimiento diseñados con precisión — todos inspeccionados y
-              certificados.
+              Rodolfo Etchevarría — Concesionaria. Excelencia y distinción en cada kilómetro. Su próximo automóvil, seleccionado bajo rigurosos estándares de calidad y confianza.
             </p>
             <div className="mt-2 flex items-center gap-3">
               {SOCIALS.map(({ label, href, icon: Icon }) => (

@@ -90,13 +90,10 @@ export function ContactSection({ initialSettings }: { initialSettings?: SiteSett
         >
           <motion.div variants={fadeUp} className="flex flex-col justify-center gap-4">
             <h2 className="font-heading text-2xl font-normal tracking-tight text-foreground sm:text-4xl">
-              Contáctanos
+              Inicie su Consulta
             </h2>
             <p className="max-w-md text-[0.95rem] leading-relaxed text-muted">
-              Estamos aquí para ti 24/7. Contáctanos, llena el formulario con
-              cualquier pregunta o utiliza nuestro asesor 24/7 para ayudarte a
-              contestar tus preguntas. Visítanos en cualquiera de nuestras
-              locations (la lista está acá abajo).
+              Permítanos asesorarle de manera personalizada. Visite nuestro salón o comuníquese con nuestro equipo. Estamos disponibles para responder sus consultas en todo momento.
             </p>
 
             <ul className="mt-4 flex max-w-md flex-col gap-5 border-t border-border pt-8">

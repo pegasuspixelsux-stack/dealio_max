@@ -31,12 +31,11 @@ export function PreFooterHero() {
           variants={fadeUp}
           className="text-balance font-heading text-3xl font-normal leading-tight tracking-tight text-foreground sm:text-5xl"
         >
-          ¿Listo para Salir a la Ruta?
+          ¿Listo para su próxima experiencia al volante?
         </motion.h2>
 
         <motion.p variants={fadeUp} className="max-w-md text-[1rem] text-muted">
-          Visita nuestro showroom para un recorrido privado, o habla con un
-          asesor para encontrar el auto ideal para ti.
+          Visite nuestro salón para una experiencia personalizada, o comuníquese con nuestro equipo especializado. Le ayudaremos a encontrar el vehículo perfecto.
         </motion.p>
 
         <motion.div variants={fadeUp} className="mt-2">

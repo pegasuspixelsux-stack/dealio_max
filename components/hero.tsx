@@ -79,10 +79,10 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-3 text-left">
           <div className="w-1/2">
             <h1 className="font-heading text-2xl font-normal leading-tight text-white sm:text-3xl">
-              Vehículos Premium
+              Excelencia Automotriz. Sin Complicaciones.
             </h1>
             <p className="text-[0.95rem] leading-relaxed text-white/90">
-              Inventario seleccionado de vehículos certificados, meticulosamente inspeccionados y listos para conducir.
+              Una cuidada selección de vehículos que combinan diseño, rendimiento y absoluta tranquilidad para su próximo camino.
             </p>
           </div>
         </div>
