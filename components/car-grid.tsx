@@ -7,6 +7,7 @@ import { useInventory } from "@/lib/firebase/inventory";
 import { useSiteSettings, type SiteSettings } from "@/lib/firebase/site-settings";
 import { CarCard } from "@/components/car-card";
 import { CarGridSkeleton } from "@/components/car-grid-skeleton";
+import { InventoryFilters } from "@/components/inventory-filters";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import type { InventoryItem } from "@/lib/dashboard-data";
 
@@ -44,6 +45,7 @@ export function CarGrid({
             />
           </div>
 
+          {/* Mobile View Toggle */}
           <div className="md:hidden flex flex-shrink-0 items-center gap-1 border border-border-strong p-1">
             <button
               type="button"
@@ -85,6 +87,9 @@ export function CarGrid({
               <Grid2x2 size={15} />
             </button>
           </div>
+
+          {/* Desktop Filters */}
+          <InventoryFilters />
         </div>
 
         {error && (
