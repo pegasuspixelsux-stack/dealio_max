@@ -109,7 +109,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           {/* Mobile Layout: 2-column grid */}
           <div className="block sm:hidden">
             {/* Widget Box */}
-            <div className="mb-4 rounded-[16px] border-[3px] border-white bg-black h-32 flex items-center justify-center">
+            <div className="mb-4 rounded-[16px] border-[5px] border-white bg-black h-32 flex items-center justify-center">
               <div className="text-center">
                 <p className="text-sm font-medium text-white/90">Vehículos Premium Curados</p>
               </div>
