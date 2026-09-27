@@ -47,7 +47,7 @@ export function SocialProofBadge({
   return (
     <motion.div
       variants={fadeUp}
-      className={`inline-flex items-center gap-3 rounded-lg border border-border bg-surface/40 px-4 py-2.5 backdrop-blur-sm ${className}`}
+      className={`inline-flex items-center gap-3 ${className}`}
     >
       {/* Google Logo Text */}
       <span className="flex items-center gap-1">
