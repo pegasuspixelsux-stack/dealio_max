@@ -46,7 +46,7 @@ const FUEL_TYPE_LABELS: Record<string, string> = {
   Electric: "Eléctrico",
 };
 
-const DEALER_NAME = "Rodolfo Etchevarría";
+const DEALER_NAME = "dealiomax";
 const DEALER_PHONE = "(415) 555-0148";
 
 function estimateMonthlyPayment(price: number) {
