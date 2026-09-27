@@ -88,16 +88,18 @@ export function CarGrid({
             </button>
           </div>
 
-          {/* Desktop Filters */}
-          <InventoryFilters />
         </div>
 
         {/* Inventory Stats Row */}
-        <div className="mb-6 flex items-center gap-2">
-          <Home size={18} className="text-foreground" />
-          <span className="text-sm font-medium text-foreground">
-            {cars.length} vehículos disponibles
-          </span>
+        <div className="mb-6 flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2">
+            <Home size={18} className="text-foreground" />
+            <span className="text-sm font-medium text-foreground">
+              {cars.length} vehículos disponibles
+            </span>
+          </div>
+          {/* Desktop Filters */}
+          <InventoryFilters />
         </div>
 
         {error && (
