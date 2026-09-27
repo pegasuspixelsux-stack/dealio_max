@@ -55,13 +55,6 @@ export function LeadQualificationChat() {
       setUserName(userInput);
       addMessage("bot", `Un gusto, ${userInput}. ¿Qué tipo de vehículo estás buscando?`);
       setStep(1);
-    } else if (step === 4) {
-      setContactInfo(userInput);
-      addMessage(
-        "bot",
-        `¡Gracias, ${userName}! Un asesor te contactará a la brevedad. También puedes explorar las unidades abajo.`
-      );
-      setStep(5);
     }
 
     setUserInput("");
