@@ -42,12 +42,12 @@ export function Navbar() {
     >
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-x-0 top-0 -z-10 h-18 bg-gradient-to-b from-background/50 via-background/15 to-transparent backdrop-blur-sm transition-opacity duration-300 ${
+        className={`pointer-events-none absolute inset-x-0 top-0 -z-10 h-[54px] sm:h-18 bg-gradient-to-b from-background/50 via-background/15 to-transparent backdrop-blur-sm transition-opacity duration-300 ${
           scrolled ? "opacity-0" : "opacity-100"
         }`}
       />
 
-      <nav className="mx-auto flex h-18 max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
+      <nav className="mx-auto flex h-[54px] sm:h-18 max-w-7xl items-center justify-between px-3 sm:px-6 lg:px-8">
         <Link
           href="/"
           className={`text-[2rem] leading-none tracking-tight transition-colors duration-200 [font-family:var(--font-script)] ${
