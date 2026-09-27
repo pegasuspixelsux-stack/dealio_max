@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { MapPin, Search } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { useSiteSettings, type SiteSettings } from "@/lib/firebase/site-settings";
 import { SocialProofBadge } from "@/components/social-proof-badge";
@@ -12,7 +12,6 @@ const SLIDE_INTERVAL = 6000;
 
 export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
   const [slide, setSlide] = useState(0);
-  const [searchQuery, setSearchQuery] = useState('');
   const { settings } = useSiteSettings(initialSettings);
   const isVideoMode = settings.heroMode === "video" && Boolean(settings.heroVideoUrl);
   const slides = settings.heroSlideshowImages.map((src, index) => ({
@@ -33,26 +32,10 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
   const mobileAspectClass = settings.mobileAspectRatio === "1/1" ? "aspect-square" : "aspect-video";
 
   return (
-    <>
-      {/* Search Bar - Above Hero */}
-      <div className="mx-auto w-full max-w-[1440px] px-4 py-4 sm:px-8 sm:py-6">
-        <div className="flex items-center rounded-[12px] border border-slate-300 bg-white px-4 py-3">
-          <input
-            type="text"
-            placeholder="Buscar marca, modelo, o año..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="outline-none text-sm w-full text-slate-900 placeholder:text-slate-500"
-          />
-          <Search size={16} className="ml-2 text-slate-400 flex-shrink-0" />
-        </div>
-      </div>
-
-      {/* Hero Section */}
-      <section
-        id="top"
-        className={`relative flex mx-auto max-w-[1440px] items-end overflow-hidden bg-background rounded-[16px] sm:aspect-auto sm:h-[90vh] sm:min-h-[640px] ${mobileAspectClass}`}
-      >
+    <section
+      id="top"
+      className={`relative flex mx-auto max-w-[1440px] items-end overflow-hidden bg-background rounded-[16px] sm:aspect-auto sm:h-[90vh] sm:min-h-[640px] ${mobileAspectClass}`}
+    >
       {isVideoMode ? (
         <video
           key={settings.heroVideoUrl}
@@ -153,7 +136,6 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           ))}
         </motion.div>
       )}
-      </section>
-    </>
+    </section>
   );
 }
