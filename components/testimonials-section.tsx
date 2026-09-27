@@ -34,7 +34,7 @@ const TESTIMONIALS = [
 export function TestimonialsSection() {
   return (
     <section className="bg-background px-3 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1440px]">
         <motion.div
           variants={fadeUp}
           initial="hidden"
