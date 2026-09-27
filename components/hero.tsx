@@ -90,7 +90,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-        className="absolute inset-x-0 bottom-0 z-10 px-4 pb-6 sm:px-8 sm:pb-16"
+        className="absolute inset-0 z-10 px-4 py-6 sm:px-8 sm:py-16 sm:pb-16 sm:bottom-0 flex flex-col justify-end"
       >
         <div className="mx-auto flex w-full sm:max-w-[1280px] flex-col gap-3 text-left">
           {/* Desktop Layout: Single column on left */}
