@@ -79,6 +79,13 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
 
       <div className="hidden sm:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent" />
 
+      {/* Mobile Logo/Title - Top Center */}
+      <div className="sm:hidden absolute inset-x-0 top-0 z-20 flex items-center justify-center pt-8">
+        <div className="text-center">
+          <div className="text-4xl font-bold text-white tracking-tight">DEALIOMAX</div>
+        </div>
+      </div>
+
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
