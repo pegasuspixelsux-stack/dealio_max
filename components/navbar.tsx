@@ -36,13 +36,13 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-9 z-50 transition-colors duration-300 ${
         scrolled
-          ? "backdrop-blur-md bg-background/80 border-b border-border"
+          ? "bg-gradient-to-b from-foreground/95 to-foreground/85 border-b border-border"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <div
         aria-hidden
-        className={`pointer-events-none absolute inset-x-0 top-0 -z-10 h-[54px] sm:h-18 bg-gradient-to-b from-background/50 via-background/15 to-transparent backdrop-blur-sm transition-opacity duration-300 ${
+        className={`pointer-events-none absolute inset-x-0 top-0 -z-10 h-[54px] sm:h-18 bg-gradient-to-b from-background/50 via-background/15 to-transparent transition-opacity duration-300 ${
           scrolled ? "opacity-0" : "opacity-100"
         }`}
       />
