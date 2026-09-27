@@ -1,9 +1,11 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 export const HeroTopNav: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +46,20 @@ export const HeroTopNav: React.FC = () => {
           </a>
         </nav>
 
-        {/* Action Button */}
+        {/* Mobile Menu Button */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden"
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? (
+            <X size={24} className="text-white" />
+          ) : (
+            <Menu size={24} className={isScrolled ? "text-slate-900" : "text-white"} />
+          )}
+        </button>
+
+        {/* Desktop Contact Button */}
         <div className="hidden md:block">
           <button
             className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
