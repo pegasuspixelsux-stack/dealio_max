@@ -384,7 +384,7 @@ export function CarCard({
 
           {/* Row 2: Make & Model (large, bold heading) */}
           <h2 className={`font-bold leading-tight text-foreground text-left ${
-            isCompact ? "text-xs" : mobileList ? "text-[2.2rem] md:text-[2rem]" : "text-[1.7rem]"
+            isCompact ? "text-xs" : mobileList ? "text-[1.2rem] md:text-[2rem]" : "text-[1.7rem]"
           }`}>
             {car.make} {car.model}
           </h2>
@@ -447,7 +447,7 @@ export function CarCard({
                 isCompact ? "text-[0.5rem]" : mobileList ? "text-[0.6rem] md:text-[0.7rem]" : "text-[0.7rem]"
               }`}>Cuota Est.</p>
               <p className={`font-bold leading-none text-foreground ${
-                isCompact ? "text-sm" : mobileList ? "text-[2.4rem] md:text-[2.6rem]" : "text-[2.2rem]"
+                isCompact ? "text-sm" : mobileList ? "text-[1rem] md:text-[2.6rem]" : "text-[2.2rem]"
               }`}>
                 {currency.format(estimateMonthlyPayment(car.price))}
                 <span className={`font-medium text-muted ${
