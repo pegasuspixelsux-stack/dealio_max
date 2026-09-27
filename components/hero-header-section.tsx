@@ -10,9 +10,9 @@ export const HeroHeaderSection: React.FC = () => {
   return (
     <>
       {/* Fixed Top Header Container */}
-      <div className="fixed top-0 left-0 right-0 z-[9999] w-full">
-        {/* Top Nav (60px high) */}
-        <header className="h-[60px] w-full bg-white border-b border-slate-100 flex items-center px-4 md:px-8">
+      <div className="fixed top-0 left-0 right-0 z-[9999] w-full bg-white">
+        {/* Row 1: Logo + Nav + Location/Hours (60px high) */}
+        <div className="h-[60px] w-full border-b border-slate-100 flex items-center px-4 md:px-8">
           <div className="mx-auto w-full max-w-7xl flex items-center justify-between">
             <div className="text-xl font-bold tracking-tight text-slate-900">
               DEALIO<span className="text-indigo-600">MAX</span>
@@ -33,27 +33,33 @@ export const HeroHeaderSection: React.FC = () => {
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
-            {/* Right Side: Location/Hours (Desktop) + Search + Contact */}
-            <div className="hidden items-center gap-4 md:flex">
-              <div className="flex items-center gap-3 text-xs text-slate-600 border-r border-slate-300 pr-4">
-                <span>📍 Punta del Este • Abierto hasta las 7:00 PM</span>
-              </div>
-              <div className="flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2">
-                <input
-                  type="text"
-                  placeholder="Search..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="outline-none text-sm w-32 text-slate-900 placeholder:text-slate-500"
-                />
-                <Search size={16} className="ml-2 text-slate-400" />
-              </div>
-              <button className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
-                Contact Sales
-              </button>
+            {/* Right Side: Location/Hours (Desktop only) */}
+            <div className="hidden items-center gap-3 text-xs text-slate-600 md:flex border-l border-slate-300 pl-4">
+              <span>📍 Punta del Este • Abierto hasta las 7:00 PM</span>
             </div>
           </div>
-        </header>
+        </div>
+
+        {/* Row 2: Search Bar (50px high) */}
+        <div className="h-[50px] w-full border-b border-slate-100 flex items-center px-4 md:px-8 bg-slate-50">
+          <div className="mx-auto w-full max-w-7xl flex items-center justify-between">
+            <div className="flex items-center gap-3 w-full md:w-auto">
+              <div className="flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2 flex-1 md:flex-none">
+                <input
+                  type="text"
+                  placeholder="Buscar marca, modelo, o año..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="outline-none text-sm w-full md:w-48 text-slate-900 placeholder:text-slate-500"
+                />
+                <Search size={16} className="ml-2 text-slate-400 flex-shrink-0" />
+              </div>
+            </div>
+            <button className="hidden md:block rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
+              Contact Sales
+            </button>
+          </div>
+        </div>
 
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
@@ -79,8 +85,8 @@ export const HeroHeaderSection: React.FC = () => {
         )}
       </div>
 
-      {/* Spacer for fixed header (60px nav) */}
-      <div className="h-[60px]" />
+      {/* Spacer for fixed header (60px row 1 + 50px row 2) */}
+      <div className="h-[110px]" />
 
       {/* Row 3: Slideshow Hero Section (Sits cleanly below fixed header) */}
       <section className="relative w-full">
