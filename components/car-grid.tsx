@@ -32,15 +32,6 @@ export function CarGrid({
   return (
     <section id="inventory" className="bg-background px-3 pb-28 pt-[5%] sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <motion.h2
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="mb-12 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-4xl"
-        >
-          Selección <span className="text-primary">Exclusiva</span>
-        </motion.h2>
         <div className="mb-8 flex flex-row items-center justify-between gap-3">
           <div className="relative flex-1">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
