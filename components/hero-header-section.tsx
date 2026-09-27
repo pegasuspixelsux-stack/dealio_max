@@ -13,11 +13,11 @@ export const HeroHeaderSection: React.FC = () => {
         {/* Row 1: Top Black Stripe (40px high) */}
         <div className="h-[40px] w-full bg-black text-white flex items-center px-4 md:px-8">
           <div className="mx-auto w-full max-w-7xl flex items-center justify-between text-xs font-medium">
-            <span>📍 Punta del Este Branch • Open Today until 7:00 PM</span>
+            <span>📍 Sucursal Punta del Este • Abierto Hoy hasta las 7:00 PM</span>
             <div className="flex items-center gap-4">
-              <a href="tel:+59800000000" className="hover:underline">📞 Direct Sales</a>
+              <a href="tel:+59800000000" className="hover:underline">📞 Ventas Directas</a>
               <span className="hidden md:inline">|</span>
-              <span className="hidden md:inline">Mass Inventory Catalog</span>
+              <span className="hidden md:inline">Catálogo de Vehículos</span>
             </div>
           </div>
         </div>
