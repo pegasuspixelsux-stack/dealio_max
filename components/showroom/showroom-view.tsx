@@ -128,7 +128,7 @@ export function ShowroomView({ initialCars }: { initialCars?: InventoryItem[] })
   const hasMore = visibleCount < filtered.length;
 
   return (
-    <section className="mx-auto sm:max-w-[1440px] px-6 pb-28 pt-10 sm:px-6 lg:px-8">
+    <section className="mx-auto sm:max-w-[1280px] px-6 pb-28 pt-10 sm:px-6 lg:px-8">
       <motion.div
         variants={fadeUp}
         initial="hidden"

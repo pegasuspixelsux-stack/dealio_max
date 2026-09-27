@@ -26,7 +26,7 @@ export function FinanceTabs() {
 
   return (
     <section id="financing" className="bg-background px-3 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto sm:max-w-[1440px]">
+      <div className="mx-auto sm:max-w-[1280px]">
         <motion.div
           variants={fadeUp}
           initial="hidden"
