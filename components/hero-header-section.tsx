@@ -33,9 +33,14 @@ export const HeroHeaderSection: React.FC = () => {
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
-            {/* Right Side: Location/Hours (Desktop only) */}
-            <div className="hidden items-center gap-3 text-xs text-slate-600 md:flex border-l border-slate-300 pl-4">
-              <span>📍 Punta del Este • Abierto hasta las 7:00 PM</span>
+            {/* Right Side: Location/Hours + Contact Sales Button (Desktop only) */}
+            <div className="hidden items-center gap-4 md:flex">
+              <div className="flex items-center gap-3 text-xs text-slate-600 border-r border-slate-300 pr-4">
+                <span>📍 Punta del Este • Abierto hasta las 7:00 PM</span>
+              </div>
+              <button className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
+                Contact Sales
+              </button>
             </div>
           </div>
         </div>
