@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Hurricane, Inter } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
-import { TopStripe } from "@/components/top-stripe";
-import { HeroTopNav } from "@/components/hero-top-nav";
+import { HeroHeaderSection } from "@/components/hero-header-section";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -42,10 +41,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
-        {/* Fixed black stripe above navbar */}
-        <div className="fixed top-0 left-0 right-0 h-2 bg-black z-[9999]" />
-        {/* Fixed white stripe matching navbar height */}
-        <div className="fixed top-2 left-0 right-0 h-10 bg-white z-30" />
         <Script id="theme-init" strategy="beforeInteractive">
           {`try {
   var theme = localStorage.getItem('theme');
@@ -56,7 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   }
 } catch (e) {}`}
         </Script>
-        <TopStripe />
+        <HeroHeaderSection />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
