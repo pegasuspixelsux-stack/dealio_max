@@ -50,41 +50,47 @@ export function CarGrid({
             <button
               type="button"
               onClick={() => setMobileView("single")}
-              aria-label="Vista de una columna"
+              aria-label="Single view"
               aria-pressed={mobileView === "single"}
-              className={`flex h-8 w-8 items-center justify-center transition-colors duration-200 ${
+              className={`flex h-8 px-2 items-center justify-center gap-1.5 transition-colors duration-200 text-xs font-medium ${
                 mobileView === "single"
                   ? "bg-foreground text-accent-foreground"
                   : "text-muted hover:text-foreground"
               }`}
+              title="Single"
             >
-              <Square size={15} />
+              <Square size={14} />
+              <span>Single</span>
             </button>
             <button
               type="button"
               onClick={() => setMobileView("list")}
-              aria-label="Vista de lista"
+              aria-label="List view"
               aria-pressed={mobileView === "list"}
-              className={`flex h-8 w-8 items-center justify-center transition-colors duration-200 sm:hidden ${
+              className={`flex h-8 px-2 items-center justify-center gap-1.5 transition-colors duration-200 sm:hidden text-xs font-medium ${
                 mobileView === "list"
                   ? "bg-foreground text-accent-foreground"
                   : "text-muted hover:text-foreground"
               }`}
+              title="List"
             >
-              <Rows size={15} />
+              <Rows size={14} />
+              <span>List</span>
             </button>
             <button
               type="button"
               onClick={() => setMobileView("grid")}
-              aria-label="Vista de cuadrícula"
+              aria-label="Grid view"
               aria-pressed={mobileView === "grid"}
-              className={`flex h-8 w-8 items-center justify-center transition-colors duration-200 ${
+              className={`flex h-8 px-2 items-center justify-center gap-1.5 transition-colors duration-200 text-xs font-medium ${
                 mobileView === "grid"
                   ? "bg-foreground text-accent-foreground"
                   : "text-muted hover:text-foreground"
               }`}
+              title="Grid"
             >
-              <Grid2x2 size={15} />
+              <Grid2x2 size={14} />
+              <span>Grid</span>
             </button>
           </div>
 
