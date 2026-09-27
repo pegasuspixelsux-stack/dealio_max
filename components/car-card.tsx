@@ -165,7 +165,7 @@ export function CarCard({
 
         <div className="flex flex-1 flex-col gap-2 p-5 sm:gap-4">
           <div>
-            <h3 className="font-heading text-[1.05rem] font-normal leading-tight text-foreground">
+            <h3 className="font-heading text-[1.6rem] font-normal leading-tight text-foreground">
               {car.make} {car.model}
             </h3>
             <div className="mt-0.5 hidden items-center gap-1.5 text-[0.85rem] text-muted sm:flex">
@@ -195,7 +195,7 @@ export function CarCard({
           </div>
 
           <div className="mt-auto flex items-end justify-between gap-3 pt-1 sm:border-t sm:border-border sm:pt-4">
-            <p className="whitespace-nowrap text-[0.8rem] text-muted">
+            <p className="whitespace-nowrap text-[1.2rem] text-muted">
               Precio {currency.format(car.price)}
             </p>
             <div className="text-right sm:text-left">
