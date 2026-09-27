@@ -7,7 +7,6 @@ import { TestimonialsSection } from "@/components/testimonials-section";
 import { PreFooterHero } from "@/components/pre-footer-hero";
 import { Footer } from "@/components/footer";
 import { MobileAccordionSection } from "@/components/mobile-accordion-section";
-import { AboutSection } from "@/components/about-section";
 import { getInventoryOnce } from "@/lib/firebase/inventory-read";
 import { getSiteSettingsOnce, DEFAULT_SITE_SETTINGS } from "@/lib/firebase/site-settings";
 import type { InventoryItem } from "@/lib/dashboard-data";
@@ -41,9 +40,7 @@ export default async function Home() {
           <CarGrid initialCars={initialCars} initialSettings={initialSiteSettings} />
         </div>
 
-        <AboutSection />
-
-        <MobileAccordionSection title="About Our Dealership">
+        <MobileAccordionSection title="Nosotros">
           <WhyChooseUs />
         </MobileAccordionSection>
 

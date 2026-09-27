@@ -37,9 +37,9 @@ const PILLARS = [
 export function WhyChooseUs() {
   return (
     <section id="about" className="bg-surface-2 px-3 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-14">
-        {/* Top Section: Text and Image */}
+      <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
+          {/* Left Column: Text Only */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -64,32 +64,34 @@ export function WhyChooseUs() {
             </motion.p>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="hidden md:block relative aspect-square overflow-hidden rounded-[12px]"
-          >
-            <Image
-              src={SHOWROOM_IMAGE}
-              alt="Rodolfo Etchevarria Showroom"
-              fill
-              sizes="(min-width: 1024px) 400px, 100vw"
-              quality={85}
-              className="object-cover object-center"
-            />
-          </motion.div>
-        </div>
+          {/* Right Column: Image + 2x2 Grid of Pillars */}
+          <div className="flex flex-col gap-6">
+            {/* Top: Showroom Image */}
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="hidden md:block relative aspect-square overflow-hidden rounded-[12px]"
+            >
+              <Image
+                src={SHOWROOM_IMAGE}
+                alt="Rodolfo Etchevarria Showroom"
+                fill
+                sizes="(min-width: 1024px) 400px, 100vw"
+                quality={85}
+                className="object-cover object-center"
+              />
+            </motion.div>
 
-        {/* Bottom Section: 4-Column Pillars */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4"
-        >
+            {/* Bottom: 2x2 Grid of Pillars */}
+            <motion.div
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="grid grid-cols-1 gap-4 sm:grid-cols-2"
+            >
           {PILLARS.map(({ icon: Icon, title, description }) => (
             <motion.div
               key={title}
@@ -111,7 +113,9 @@ export function WhyChooseUs() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
