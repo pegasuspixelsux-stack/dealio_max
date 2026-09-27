@@ -32,10 +32,11 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
   const mobileAspectClass = settings.mobileAspectRatio === "1/1" ? "aspect-square" : "aspect-video";
 
   return (
-    <section
-      id="top"
-      className={`relative flex w-full mx-auto max-w-[1280px] items-end overflow-hidden bg-background rounded-[16px] px-4 py-4 pt-[100px] sm:px-6 sm:py-6 sm:pt-[100px] lg:px-8 lg:pt-[100px] sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] ${mobileAspectClass}`}
-    >
+    <div className="mt-[100px]">
+      <section
+        id="top"
+        className={`relative flex w-full mx-auto max-w-[1280px] items-end overflow-hidden bg-background rounded-[16px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] ${mobileAspectClass}`}
+      >
       {isVideoMode ? (
         <video
           key={settings.heroVideoUrl}
@@ -136,6 +137,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           ))}
         </motion.div>
       )}
-    </section>
+      </section>
+    </div>
   );
 }
