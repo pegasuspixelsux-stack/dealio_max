@@ -7,6 +7,7 @@ import { CarGrid } from "@/components/car-grid";
 import { TestimonialsSection } from "@/components/testimonials-section";
 import { PreFooterHero } from "@/components/pre-footer-hero";
 import { Footer } from "@/components/footer";
+import { MobileAccordionSection } from "@/components/mobile-accordion-section";
 import { getInventoryOnce } from "@/lib/firebase/inventory-read";
 import { getSiteSettingsOnce, DEFAULT_SITE_SETTINGS } from "@/lib/firebase/site-settings";
 import type { InventoryItem } from "@/lib/dashboard-data";
@@ -38,11 +39,26 @@ export default async function Home() {
         <Hero initialSettings={initialSiteSettings} />
 
         <CarGrid initialCars={initialCars} initialSettings={initialSiteSettings} />
-        <WhyChooseUs />
-        <TestimonialsSection />
-        <FinanceTabs />
-        <ContactSection initialSettings={initialSiteSettings} />
-        <PreFooterHero />
+
+        <MobileAccordionSection title="About Our Dealership">
+          <WhyChooseUs />
+        </MobileAccordionSection>
+
+        <MobileAccordionSection title="Customer Reviews">
+          <TestimonialsSection />
+        </MobileAccordionSection>
+
+        <MobileAccordionSection title="Financing Solutions">
+          <FinanceTabs />
+        </MobileAccordionSection>
+
+        <MobileAccordionSection title="Contact Us">
+          <ContactSection initialSettings={initialSiteSettings} />
+        </MobileAccordionSection>
+
+        <MobileAccordionSection title="Visit Our Showroom">
+          <PreFooterHero />
+        </MobileAccordionSection>
       </main>
       <Footer />
     </>
