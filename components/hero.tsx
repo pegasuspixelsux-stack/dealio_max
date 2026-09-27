@@ -112,12 +112,6 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
             {/* Lead Chat Widget */}
             <LeadQualificationChat />
 
-            {/* Widget Box */}
-            <div className="rounded-[16px] border-[5px] border-white bg-black h-32 flex items-center justify-center shadow-lg">
-              <div className="text-center">
-                <p className="text-sm font-medium text-white/90">Vehículos Premium Curados</p>
-              </div>
-            </div>
             <div className="grid grid-cols-2 gap-4 items-center">
               <div className="flex flex-col gap-2">
                 <div className="mb-1">
