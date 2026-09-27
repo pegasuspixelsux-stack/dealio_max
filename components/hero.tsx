@@ -35,7 +35,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
     <div className="mt-[10px] px-[10px]">
       <section
         id="top"
-        className={`relative flex w-full mx-auto max-w-[1280px] items-end overflow-hidden bg-background rounded-[16px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 h-screen sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] sm:rounded-[16px] ${mobileAspectClass}`}
+        className={`relative flex w-full mx-auto max-w-[1280px] items-end bg-background rounded-[16px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 h-screen sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] sm:rounded-[16px] overflow-clip ${mobileAspectClass}`}
         style={{
           backgroundImage: 'url(/hero-mobile.jpg)',
           backgroundSize: 'cover',
@@ -109,7 +109,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           {/* Mobile Layout: 2-column grid */}
           <div className="block sm:hidden">
             {/* Widget Box */}
-            <div className="mb-4 rounded-[16px] border-[5px] border-white bg-black h-32 flex items-center justify-center">
+            <div className="mb-4 rounded-[16px] border-[5px] border-white bg-black h-32 flex items-center justify-center shadow-lg">
               <div className="text-center">
                 <p className="text-sm font-medium text-white/90">Vehículos Premium Curados</p>
               </div>
