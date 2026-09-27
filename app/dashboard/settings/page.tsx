@@ -8,6 +8,7 @@ import {
   useSiteSettings,
   updateSiteSettings,
   type HeroMode,
+  type MobileAspectRatio,
   type SiteSettings,
 } from "@/lib/firebase/site-settings";
 import { uploadHeroVideo, uploadHeroSlideshowImage } from "@/lib/firebase/storage";
@@ -167,6 +168,10 @@ export default function SettingsPage() {
     await updateSiteSettings({ heroMode: mode });
   };
 
+  const handleMobileAspectRatioChange = async (ratio: MobileAspectRatio) => {
+    await updateSiteSettings({ mobileAspectRatio: ratio });
+  };
+
   const handleVideoUpload = async (file: File) => {
     setUploading(true);
     setError(null);
@@ -277,6 +282,62 @@ export default function SettingsPage() {
               </span>
             </span>
           </button>
+        </div>
+
+        <div className="mt-6 flex flex-col gap-4 border-t border-slate-100 pt-6">
+          <div>
+            <label className="block text-sm font-medium text-slate-900">
+              Formato de Imagen en Mobile
+            </label>
+            <p className="mt-1 text-sm text-slate-500">
+              Desktop está fijo en 16:9 landscape. Elegí cómo se mostrarán las imágenes en pantallas móviles.
+            </p>
+            <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
+              <button
+                type="button"
+                onClick={() => void handleMobileAspectRatioChange("16/9")}
+                className={`flex items-center gap-3 border p-4 text-left transition-colors ${
+                  settings.mobileAspectRatio === "16/9"
+                    ? "border-indigo-500 bg-indigo-50"
+                    : "border-slate-200 hover:border-slate-300"
+                }`}
+              >
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-none border border-slate-200 bg-white text-slate-600 text-sm font-semibold">
+                  16:9
+                </span>
+                <span>
+                  <span className="block text-sm font-medium text-slate-900">
+                    Landscape (16:9)
+                  </span>
+                  <span className="block text-xs text-slate-500">
+                    Ancho y panorámico
+                  </span>
+                </span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => void handleMobileAspectRatioChange("1/1")}
+                className={`flex items-center gap-3 border p-4 text-left transition-colors ${
+                  settings.mobileAspectRatio === "1/1"
+                    ? "border-indigo-500 bg-indigo-50"
+                    : "border-slate-200 hover:border-slate-300"
+                }`}
+              >
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-none border border-slate-200 bg-white text-slate-600 text-sm font-semibold">
+                  1:1
+                </span>
+                <span>
+                  <span className="block text-sm font-medium text-slate-900">
+                    Square (1:1)
+                  </span>
+                  <span className="block text-xs text-slate-500">
+                    Cuadrado
+                  </span>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
 
         <div className="mt-6 flex flex-col gap-3 border-t border-slate-100 pt-6">

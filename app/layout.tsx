@@ -44,7 +44,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Script id="theme-init" strategy="beforeInteractive">
           {`try {
   var theme = localStorage.getItem('theme');
-  if (theme === 'light') {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
     document.documentElement.setAttribute('data-theme', 'light');
   }
 } catch (e) {}`}

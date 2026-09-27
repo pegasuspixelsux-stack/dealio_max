@@ -17,11 +17,13 @@ const COLLECTION = "settings";
 const DOC_ID = "site";
 
 export type HeroMode = "slideshow" | "video";
+export type MobileAspectRatio = "16/9" | "1/1";
 
 export interface SiteSettings {
   heroMode: HeroMode;
   heroVideoUrl: string | null;
   heroSlideshowImages: string[];
+  mobileAspectRatio: MobileAspectRatio;
   gridHeading: string;
   gridSupportText: string;
   dealerLocation: string;
@@ -40,6 +42,7 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   heroMode: "slideshow",
   heroVideoUrl: null,
   heroSlideshowImages: [],
+  mobileAspectRatio: "16/9",
   gridHeading: "Selección Premium",
   gridSupportText:
     "Vehículos seleccionados a mano, cada uno inspeccionado y certificado antes de llegar a ti.",
@@ -56,6 +59,10 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
 };
 
 const HEX_PATTERN = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i;
+
+function isMobileAspectRatio(value: unknown): value is MobileAspectRatio {
+  return value === "16/9" || value === "1/1";
+}
 
 const STRING_FIELDS = [
   "gridHeading",
@@ -76,6 +83,7 @@ function toSiteSettings(data: Record<string, unknown> | undefined): SiteSettings
     heroSlideshowImages: Array.isArray(data.heroSlideshowImages)
       ? data.heroSlideshowImages.filter((url): url is string => typeof url === "string")
       : [],
+    mobileAspectRatio: isMobileAspectRatio(data.mobileAspectRatio) ? data.mobileAspectRatio : "16/9",
   } as SiteSettings;
   for (const field of STRING_FIELDS) {
     const value = data[field];

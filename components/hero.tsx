@@ -29,10 +29,12 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
     return () => clearInterval(id);
   }, [isVideoMode, hasSlides, slides.length]);
 
+  const mobileAspectClass = settings.mobileAspectRatio === "1/1" ? "aspect-square" : "aspect-video";
+
   return (
     <section
       id="top"
-      className="relative flex aspect-square w-full items-end overflow-hidden bg-background sm:aspect-auto sm:h-[90vh] sm:min-h-[640px]"
+      className={`relative flex w-full items-end overflow-hidden bg-background sm:aspect-auto sm:h-[90vh] sm:min-h-[640px] ${mobileAspectClass}`}
     >
       {isVideoMode ? (
         <video
