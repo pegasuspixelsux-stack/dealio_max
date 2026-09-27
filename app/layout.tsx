@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${script.variable} ${heading.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground pt-20">
+      <body className="min-h-full flex flex-col bg-background text-foreground pt-28">
         {/* Fixed black stripe above navbar */}
         <div className="fixed top-0 left-0 right-0 h-2 bg-black z-[9999]" />
         <Script id="theme-init" strategy="beforeInteractive">
