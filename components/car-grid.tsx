@@ -52,45 +52,39 @@ export function CarGrid({
               onClick={() => setMobileView("single")}
               aria-label="Single view"
               aria-pressed={mobileView === "single"}
-              className={`flex h-8 px-2 items-center justify-center gap-1.5 transition-colors duration-200 text-xs font-medium ${
+              className={`flex h-8 w-8 items-center justify-center transition-colors duration-200 ${
                 mobileView === "single"
                   ? "bg-foreground text-accent-foreground"
                   : "text-muted hover:text-foreground"
               }`}
-              title="Single"
             >
-              <Square size={14} />
-              <span>Single</span>
+              <Square size={15} />
             </button>
             <button
               type="button"
               onClick={() => setMobileView("list")}
               aria-label="List view"
               aria-pressed={mobileView === "list"}
-              className={`flex h-8 px-2 items-center justify-center gap-1.5 transition-colors duration-200 sm:hidden text-xs font-medium ${
+              className={`flex h-8 w-8 items-center justify-center transition-colors duration-200 sm:hidden ${
                 mobileView === "list"
                   ? "bg-foreground text-accent-foreground"
                   : "text-muted hover:text-foreground"
               }`}
-              title="List"
             >
-              <Rows size={14} />
-              <span>List</span>
+              <Rows size={15} />
             </button>
             <button
               type="button"
               onClick={() => setMobileView("grid")}
               aria-label="Grid view"
               aria-pressed={mobileView === "grid"}
-              className={`flex h-8 px-2 items-center justify-center gap-1.5 transition-colors duration-200 text-xs font-medium ${
+              className={`flex h-8 w-8 items-center justify-center transition-colors duration-200 ${
                 mobileView === "grid"
                   ? "bg-foreground text-accent-foreground"
                   : "text-muted hover:text-foreground"
               }`}
-              title="Grid"
             >
-              <Grid2x2 size={14} />
-              <span>Grid</span>
+              <Grid2x2 size={15} />
             </button>
           </div>
 
