@@ -51,8 +51,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   }
 } catch (e) {}`}
         </Script>
-        <HeroHeaderSection />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <HeroHeaderSection />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

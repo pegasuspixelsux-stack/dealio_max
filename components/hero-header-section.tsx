@@ -4,9 +4,9 @@ import React from 'react';
 
 export const HeroHeaderSection: React.FC = () => {
   return (
-    <div className="w-full">
+    <div className="w-full overflow-visible">
       {/* Sticky Top Header Container (Sticky Row 1 + Row 2) */}
-      <div className="sticky top-0 z-50 w-full">
+      <div className="sticky top-0 z-[9999] w-full overflow-visible">
         {/* Row 1: Top Black Stripe (40px high) */}
         <div className="h-[40px] w-full bg-black text-white flex items-center px-4 md:px-8">
           <div className="mx-auto w-full max-w-7xl flex items-center justify-between text-xs font-medium">
