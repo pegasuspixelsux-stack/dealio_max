@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Search } from 'lucide-react';
 
 export const HeroTopNav: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,17 +60,22 @@ export const HeroTopNav: React.FC = () => {
           )}
         </button>
 
-        {/* Desktop Contact Button */}
-        <div className="hidden md:block">
-          <button
-            className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
-              isScrolled
-                ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-                : 'bg-white text-slate-900 hover:bg-slate-100'
-            }`}
-          >
-            Contact Sales
-          </button>
+        {/* Search Bar */}
+        <div className="hidden md:flex items-center">
+          <div className={`flex items-center rounded-lg px-3 py-2 transition-colors ${
+            isScrolled
+              ? 'bg-slate-200 text-slate-900'
+              : 'bg-white/20 text-white'
+          }`}>
+            <input
+              type="text"
+              placeholder="Search inventory..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="bg-transparent outline-none text-sm w-32 placeholder-current placeholder-opacity-70"
+            />
+            <Search size={16} className="ml-2 opacity-70" />
+          </div>
         </div>
       </div>
     </header>
