@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Search } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 
 export const HeroHeaderSection: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -35,6 +36,15 @@ export const HeroHeaderSection: React.FC = () => {
               <a href="#contact" className="hover:text-slate-900">Contact</a>
             </nav>
 
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden text-slate-900"
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
             {/* Search Box and Contact Button */}
             <div className="hidden items-center gap-3 md:flex">
               <div className="flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2">
@@ -53,6 +63,29 @@ export const HeroHeaderSection: React.FC = () => {
             </div>
           </div>
         </header>
+
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-b border-slate-100 px-4 py-4">
+            <div className="mx-auto w-full max-w-7xl flex flex-col gap-3">
+              <a href="#inventory" className="text-sm font-medium text-slate-700 hover:text-slate-900">
+                Inventory
+              </a>
+              <a href="#services" className="text-sm font-medium text-slate-700 hover:text-slate-900">
+                Services
+              </a>
+              <a href="#about" className="text-sm font-medium text-slate-700 hover:text-slate-900">
+                About Us
+              </a>
+              <a href="#contact" className="text-sm font-medium text-slate-700 hover:text-slate-900">
+                Contact
+              </a>
+              <button className="mt-2 w-full rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
+                Contact Sales
+              </button>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Spacer for fixed header (100px = 40px stripe + 60px nav) */}
