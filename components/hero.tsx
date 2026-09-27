@@ -49,7 +49,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           muted
           loop
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          className="hidden sm:block absolute inset-0 h-full w-full object-cover"
         >
           <source src={settings.heroVideoUrl ?? undefined} />
         </video>
@@ -62,7 +62,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
-              className="absolute inset-0"
+              className="hidden sm:block absolute inset-0"
             >
               <Image
                 src={slides[activeSlide].src}
@@ -77,7 +77,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
         )
       )}
 
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent" />
+      <div className="hidden sm:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent" />
 
       <motion.div
         initial={{ opacity: 0, y: 12 }}
@@ -125,7 +125,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           initial="hidden"
           animate="visible"
           variants={fadeUp}
-          className="absolute right-[-4px] top-1/2 z-10 flex -translate-y-1/2 flex-row gap-2 rotate-90 sm:right-[-4px]"
+          className="hidden sm:flex absolute right-[-4px] top-1/2 z-10 -translate-y-1/2 flex-row gap-2 rotate-90 sm:right-[-4px]"
         >
           {slides.map((item, index) => (
             <button

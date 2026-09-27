@@ -52,7 +52,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 } catch (e) {}`}
         </Script>
         <ThemeProvider>
-          <HeroHeaderSection />
+          <div className="hidden sm:block">
+            <HeroHeaderSection />
+          </div>
           {children}
         </ThemeProvider>
       </body>
