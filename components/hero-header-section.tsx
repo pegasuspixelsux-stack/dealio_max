@@ -38,8 +38,6 @@ export const HeroHeaderSection: React.FC = () => {
         </header>
       </div>
 
-      </div>
-
       {/* Spacer for fixed header (100px = 40px stripe + 60px nav) */}
       <div className="h-[100px]" />
 
