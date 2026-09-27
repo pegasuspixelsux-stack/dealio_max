@@ -51,7 +51,7 @@ export function SocialProofBadge({
     >
       {/* Google Logo Text */}
       <span className="flex items-center gap-1">
-        <span className="text-[0.85rem] font-medium text-muted">Google</span>
+        <span className="text-[0.85rem] font-medium text-white">Google</span>
       </span>
 
       {/* Star Rating */}
@@ -63,17 +63,17 @@ export function SocialProofBadge({
             className={`${
               i < Math.floor(rating)
                 ? "fill-amber-400 text-amber-400"
-                : "text-muted-2"
+                : "text-white/40"
             }`}
           />
         ))}
-        <span className="ml-1 text-[0.8rem] font-medium text-foreground">
+        <span className="ml-1 text-[0.8rem] font-medium text-white">
           {rating}
         </span>
       </div>
 
       {/* Review Count */}
-      <span className="text-[0.8rem] text-muted">
+      <span className="text-[0.8rem] text-white">
         ({reviewCount.toLocaleString()} reseñas)
       </span>
     </motion.div>
