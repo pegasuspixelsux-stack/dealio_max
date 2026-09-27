@@ -1,8 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
+import { Search } from 'lucide-react';
 
 export const HeroHeaderSection: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
   return (
     <>
       {/* Fixed Top Header Container (Fixed Row 1 + Row 2) */}
@@ -31,9 +34,23 @@ export const HeroHeaderSection: React.FC = () => {
               <a href="#about" className="hover:text-slate-900">About Us</a>
               <a href="#contact" className="hover:text-slate-900">Contact</a>
             </nav>
-            <button className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
-              Contact Sales
-            </button>
+
+            {/* Search Box and Contact Button */}
+            <div className="hidden items-center gap-3 md:flex">
+              <div className="flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2">
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="outline-none text-sm w-32 text-slate-900 placeholder:text-slate-500"
+                />
+                <Search size={16} className="ml-2 text-slate-400" />
+              </div>
+              <button className="rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
+                Contact Sales
+              </button>
+            </div>
           </div>
         </header>
       </div>
