@@ -25,7 +25,7 @@ export const HeroTopNav: React.FC = () => {
           : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent text-white'
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-[8px] md:py-[10px] md:px-6">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-0 md:py-2 md:px-6">
         {/* Dealership Logo */}
         <div className="text-lg md:text-xl font-bold tracking-tight">
           DEALIO<span className="text-indigo-500">MAX</span>
