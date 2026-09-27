@@ -34,7 +34,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
   return (
     <section
       id="top"
-      className={`relative flex mx-auto max-w-[1440px] items-end overflow-hidden bg-background rounded-[16px] pt-5 sm:aspect-auto sm:h-[90vh] sm:min-h-[640px] ${mobileAspectClass}`}
+      className={`relative flex mx-auto max-w-[1440px] items-end overflow-hidden bg-background rounded-[16px] mt-5 sm:aspect-auto sm:h-[90vh] sm:min-h-[640px] ${mobileAspectClass}`}
     >
       {isVideoMode ? (
         <video
