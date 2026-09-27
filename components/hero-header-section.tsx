@@ -42,22 +42,17 @@ export const HeroHeaderSection: React.FC = () => {
 
         {/* Row 2: Search Bar (50px high) */}
         <div className="h-[50px] w-full border-b border-slate-100 flex items-center px-4 md:px-8 bg-slate-50">
-          <div className="mx-auto w-full max-w-7xl flex items-center justify-between">
-            <div className="flex items-center gap-3 w-full md:w-auto">
-              <div className="flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2 flex-1 md:flex-none">
-                <input
-                  type="text"
-                  placeholder="Buscar marca, modelo, o año..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="outline-none text-sm w-full md:w-48 text-slate-900 placeholder:text-slate-500"
-                />
-                <Search size={16} className="ml-2 text-slate-400 flex-shrink-0" />
-              </div>
+          <div className="mx-auto w-full max-w-7xl flex items-center justify-center">
+            <div className="flex items-center rounded-lg border border-slate-300 bg-white px-3 py-2 w-full">
+              <input
+                type="text"
+                placeholder="Buscar marca, modelo, o año..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="outline-none text-sm w-full text-slate-900 placeholder:text-slate-500"
+              />
+              <Search size={16} className="ml-2 text-slate-400 flex-shrink-0" />
             </div>
-            <button className="hidden md:block rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800">
-              Contact Sales
-            </button>
           </div>
         </div>
 
