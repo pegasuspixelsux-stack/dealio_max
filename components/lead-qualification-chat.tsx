@@ -23,7 +23,12 @@ export function LeadQualificationChat() {
   const [vehicleType, setVehicleType] = useState("");
   const [budget, setBudget] = useState("");
   const [paymentType, setPaymentType] = useState("");
-  const [contactInfo, setContactInfo] = useState("");
+  const [contactName, setContactName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [whatsappNumber, setWhatsappNumber] = useState("");
+  const [sameAsPhone, setSameAsPhone] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
+  const [leadSubmitted, setLeadSubmitted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -93,11 +98,28 @@ export function LeadQualificationChat() {
       } else if (option === "Que un asesor me contacte") {
         addMessage(
           "bot",
-          `Por favor, ingresa tu teléfono o email para que un asesor especializado te contacte:`
+          `Para que un asesor te contacte, por favor déjanos tu información:`
         );
-        setStep(4);
+        setContactName(userName);
+        setShowContactForm(true);
       }
     }
+  };
+
+  const handleContactSubmit = () => {
+    if (!contactName.trim() || !phoneNumber.trim()) return;
+
+    const whatsapp = sameAsPhone ? phoneNumber : whatsappNumber;
+
+    addMessage("user", `${contactName} | ${phoneNumber} | ${whatsapp}`);
+    addMessage(
+      "bot",
+      `¡Muchas gracias, ${contactName}! Un asesor se va a contactar contigo.`
+    );
+
+    setShowContactForm(false);
+    setLeadSubmitted(true);
+    setStep(5);
   };
 
   const renderOptions = () => {
@@ -142,8 +164,50 @@ export function LeadQualificationChat() {
       </div>
 
       {/* Options or Input */}
-      <div className="border-t border-slate-700 p-3 bg-slate-900 space-y-2">
-        {step > 0 && step < 5 && renderOptions().length > 0 ? (
+      <div className="border-t border-slate-700 p-3 bg-slate-900 space-y-2 max-h-40 overflow-y-auto">
+        {showContactForm ? (
+          <div className="space-y-2">
+            <input
+              type="text"
+              placeholder="Nombre completo"
+              value={contactName}
+              onChange={(e) => setContactName(e.target.value)}
+              className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded text-white text-sm placeholder-slate-400 focus:outline-none focus:border-indigo-600"
+            />
+            <input
+              type="tel"
+              placeholder="Número de teléfono"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded text-white text-sm placeholder-slate-400 focus:outline-none focus:border-indigo-600"
+            />
+            <div className="space-y-1">
+              <input
+                type="tel"
+                placeholder="Número de WhatsApp"
+                value={whatsappNumber}
+                onChange={(e) => setWhatsappNumber(e.target.value)}
+                disabled={sameAsPhone}
+                className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded text-white text-sm placeholder-slate-400 focus:outline-none focus:border-indigo-600 disabled:opacity-50"
+              />
+              <label className="flex items-center gap-2 text-xs text-slate-400 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={sameAsPhone}
+                  onChange={(e) => setSameAsPhone(e.target.checked)}
+                  className="w-3 h-3"
+                />
+                Es el mismo número
+              </label>
+            </div>
+            <button
+              onClick={handleContactSubmit}
+              className="w-full px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm rounded transition"
+            >
+              Enviar datos
+            </button>
+          </div>
+        ) : step > 0 && step < 5 && renderOptions().length > 0 ? (
           <div className="space-y-2">
             {renderOptions().map((option) => (
               <button
@@ -154,23 +218,6 @@ export function LeadQualificationChat() {
                 {option}
               </button>
             ))}
-          </div>
-        ) : step === 4 && paymentType && !contactInfo ? (
-          <div className="flex gap-2">
-            <input
-              type="text"
-              placeholder="Teléfono o email"
-              value={userInput}
-              onChange={(e) => setUserInput(e.target.value)}
-              onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-              className="flex-1 px-3 py-2 bg-slate-800 border border-slate-600 rounded text-white text-sm placeholder-slate-400 focus:outline-none focus:border-indigo-600"
-            />
-            <button
-              onClick={handleSendMessage}
-              className="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded transition"
-            >
-              <Send size={16} />
-            </button>
           </div>
         ) : step === 0 ? (
           <div className="flex gap-2">
@@ -189,7 +236,7 @@ export function LeadQualificationChat() {
               <Send size={16} />
             </button>
           </div>
-        ) : step === 5 ? (
+        ) : leadSubmitted ? (
           <button
             onClick={() => {
               const inventorySection = document.getElementById("inventory");
@@ -197,7 +244,7 @@ export function LeadQualificationChat() {
             }}
             className="w-full px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm rounded transition"
           >
-            Ver Inventario General
+            Explorar inventario ahora
           </button>
         ) : null}
       </div>
