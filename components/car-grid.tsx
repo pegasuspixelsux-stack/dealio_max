@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Rows, Square, Grid2x2, Search } from "lucide-react";
+import { Rows, Square, Grid2x2, Search, Home } from "lucide-react";
 import { useInventory } from "@/lib/firebase/inventory";
 import { useSiteSettings, type SiteSettings } from "@/lib/firebase/site-settings";
 import { CarCard } from "@/components/car-card";
@@ -90,6 +90,14 @@ export function CarGrid({
 
           {/* Desktop Filters */}
           <InventoryFilters />
+        </div>
+
+        {/* Inventory Stats Row */}
+        <div className="mb-6 flex items-center gap-2">
+          <Home size={18} className="text-foreground" />
+          <span className="text-sm font-medium text-foreground">
+            {cars.length} vehículos disponibles
+          </span>
         </div>
 
         {error && (
