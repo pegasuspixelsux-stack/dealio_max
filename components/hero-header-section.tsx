@@ -4,9 +4,9 @@ import React from 'react';
 
 export const HeroHeaderSection: React.FC = () => {
   return (
-    <div className="w-full overflow-visible">
-      {/* Sticky Top Header Container (Sticky Row 1 + Row 2) */}
-      <div className="sticky top-0 z-[9999] w-full overflow-visible">
+    <>
+      {/* Fixed Top Header Container (Fixed Row 1 + Row 2) */}
+      <div className="fixed top-0 left-0 right-0 z-[9999] w-full">
         {/* Row 1: Top Black Stripe (40px high) */}
         <div className="h-[40px] w-full bg-black text-white flex items-center px-4 md:px-8">
           <div className="mx-auto w-full max-w-7xl flex items-center justify-between text-xs font-medium">
@@ -38,10 +38,15 @@ export const HeroHeaderSection: React.FC = () => {
         </header>
       </div>
 
-      {/* Row 3: Slideshow Hero Section (Sits cleanly below Row 2) */}
+      </div>
+
+      {/* Spacer for fixed header (100px = 40px stripe + 60px nav) */}
+      <div className="h-[100px]" />
+
+      {/* Row 3: Slideshow Hero Section (Sits cleanly below fixed header) */}
       <section className="relative w-full">
         {/* Existing slideshow and internal text blocks stay untouched here */}
       </section>
-    </div>
+    </>
   );
 };
