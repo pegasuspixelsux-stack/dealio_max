@@ -8,7 +8,7 @@ import { createLead } from "@/lib/firebase/leads";
 import { useSiteSettings, type SiteSettings } from "@/lib/firebase/site-settings";
 
 const fieldClass =
-  "h-12 w-full rounded-none border border-border-strong bg-surface px-4 text-[0.9rem] text-foreground placeholder:text-muted-2 transition-colors duration-200 focus-visible:border-foreground/50 focus-visible:outline-none";
+  "h-12 w-full rounded-[12px] border border-border-strong bg-surface px-4 text-[0.9rem] text-foreground placeholder:text-muted-2 transition-colors duration-200 focus-visible:border-foreground/50 focus-visible:outline-none";
 
 interface ContactDraft {
   name: string;
@@ -99,7 +99,7 @@ export function ContactSection({ initialSettings }: { initialSettings?: SiteSett
             <ul className="mt-4 flex max-w-md flex-col gap-5 border-t border-border pt-8">
               {contactDetails.map(({ label, value, icon: Icon, href }) => (
                 <li key={label} className="flex items-center gap-3.5">
-                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-none border border-border-strong text-primary">
+                  <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-[12px] border border-border-strong text-primary">
                     <Icon size={18} />
                   </span>
                   <div className="flex min-w-0 flex-col gap-0.5">
@@ -122,8 +122,8 @@ export function ContactSection({ initialSettings }: { initialSettings?: SiteSett
 
           <motion.div variants={fadeUp}>
             {submitted ? (
-              <div className="flex flex-col items-center gap-3 rounded-none border border-border bg-surface p-10 text-center">
-                <span className="flex h-12 w-12 items-center justify-center rounded-none bg-surface-2 text-foreground">
+              <div className="flex flex-col items-center gap-3 rounded-[12px] border border-border bg-surface p-10 text-center">
+                <span className="flex h-12 w-12 items-center justify-center rounded-[12px] bg-surface-2 text-foreground">
                   <CheckCircle2 size={22} />
                 </span>
                 <h3 className="font-heading text-[1.05rem] font-normal text-foreground">
@@ -146,7 +146,7 @@ export function ContactSection({ initialSettings }: { initialSettings?: SiteSett
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="flex flex-col gap-4 rounded-none border border-border bg-surface p-6 sm:p-8"
+                className="flex flex-col gap-4 rounded-[12px] border border-border bg-surface p-6 sm:p-8"
               >
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="flex flex-col gap-2">

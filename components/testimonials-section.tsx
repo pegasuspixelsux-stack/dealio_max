@@ -58,7 +58,7 @@ export function TestimonialsSection() {
             <motion.div
               key={testimonial.name}
               variants={fadeUp}
-              className="flex w-[75vw] flex-shrink-0 flex-col gap-4 rounded-none border border-border bg-surface-2 p-6 lg:w-full lg:flex-shrink lg:p-8"
+              className="flex w-[75vw] flex-shrink-0 flex-col gap-4 rounded-[12px] border border-border bg-surface-2 p-6 lg:w-full lg:flex-shrink lg:p-8"
             >
               <div className="flex items-center gap-1">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (

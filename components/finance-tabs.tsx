@@ -78,7 +78,7 @@ export function FinanceTabs() {
           >
             <motion.div
               variants={fadeUp}
-              className="glass relative overflow-hidden rounded-none p-6 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] sm:p-10"
+              className="glass relative overflow-hidden rounded-[12px] p-6 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] sm:p-10"
             >
               <FinanceCalculator />
             </motion.div>
@@ -117,7 +117,7 @@ export function FinanceTabs() {
 
             <motion.div
               variants={fadeUp}
-              className="glass relative overflow-hidden rounded-none p-6 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] sm:p-10 md:order-1"
+              className="glass relative overflow-hidden rounded-[12px] p-6 shadow-[0_40px_90px_-30px_rgba(0,0,0,0.7)] sm:p-10 md:order-1"
             >
               <h3 className="mb-3 font-heading text-[1.05rem] font-normal text-foreground">
                 Permuta tu Vehículo

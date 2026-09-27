@@ -139,7 +139,7 @@ export function CarCard({
     return (
       <motion.article
         variants={fadeUp}
-        className="group relative flex min-h-[280px] flex-row overflow-hidden rounded-none bg-transparent"
+        className="group relative flex min-h-[280px] flex-row overflow-hidden rounded-[12px] bg-transparent"
       >
         <Link
           href={`/inventory/${car.id}`}
@@ -215,7 +215,7 @@ export function CarCard({
     return (
       <motion.article
         variants={fadeUp}
-        className="@container group relative aspect-[4/5] overflow-hidden rounded-none bg-surface-2"
+        className="@container group relative aspect-[4/5] overflow-hidden rounded-[12px] bg-surface-2"
       >
         <Image
           src={car.image}
@@ -302,7 +302,7 @@ export function CarCard({
   return (
     <motion.article
       variants={fadeUp}
-      className={`@container group relative flex cursor-pointer overflow-hidden rounded-none bg-white shadow-sm transition-all duration-300 hover:shadow-md ${
+      className={`@container group relative flex cursor-pointer overflow-hidden rounded-[12px] bg-white shadow-sm transition-all duration-300 hover:shadow-md ${
         mobileList ? "flex-row md:flex-col" : "flex-col"
       }`}
     >

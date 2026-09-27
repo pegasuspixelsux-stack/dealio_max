@@ -41,7 +41,7 @@ export function PreFooterHero() {
         <motion.div variants={fadeUp} className="mt-2">
           <a
             href="/showroom"
-            className="flex h-12 items-center justify-center rounded-none bg-foreground px-7 text-[0.9rem] font-medium text-accent-foreground transition-transform duration-200 ease-out hover:scale-[1.03] active:scale-[0.97]"
+            className="flex h-12 items-center justify-center rounded-[12px] bg-foreground px-7 text-[0.9rem] font-medium text-accent-foreground transition-transform duration-200 ease-out hover:scale-[1.03] active:scale-[0.97]"
           >
             Sala de Exhibición
           </a>

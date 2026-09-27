@@ -69,7 +69,7 @@ export function WhyChooseUs() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="hidden md:block relative aspect-square overflow-hidden rounded-none"
+            className="hidden md:block relative aspect-square overflow-hidden rounded-[12px]"
           >
             <Image
               src={SHOWROOM_IMAGE}
@@ -94,10 +94,10 @@ export function WhyChooseUs() {
             <motion.div
               key={title}
               variants={fadeUp}
-              className="group relative flex flex-col gap-3 overflow-hidden rounded-none border border-border bg-surface/60 p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-border-strong hover:bg-surface"
+              className="group relative flex flex-col gap-3 overflow-hidden rounded-[12px] border border-border bg-surface/60 p-5 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-border-strong hover:bg-surface"
             >
               <div className="flex items-start gap-3.5">
-                <span className="glass relative flex h-10 w-10 shrink-0 items-center justify-center rounded-none text-primary">
+                <span className="glass relative flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] text-primary">
                   <Icon size={18} />
                 </span>
                 <div className="relative flex flex-col gap-1">
