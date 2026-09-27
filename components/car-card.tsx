@@ -447,7 +447,7 @@ export function CarCard({
                 isCompact ? "text-[0.5rem]" : mobileList ? "text-[0.6rem] md:text-[0.7rem]" : "text-[0.7rem]"
               }`}>Cuota Est.</p>
               <p className={`font-bold leading-none text-foreground ${
-                isCompact ? "text-[1.3rem]" : mobileList ? "text-[1rem] md:text-[2.6rem]" : "text-[2.2rem]"
+                isCompact ? "text-[1.3rem]" : mobileList ? "text-[1rem] md:text-[2.6rem]" : "text-[2.6rem] md:text-[2.2rem]"
               }`}>
                 {currency.format(estimateMonthlyPayment(car.price))}
                 <span className={`font-medium text-muted ${
