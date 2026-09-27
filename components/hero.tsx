@@ -35,7 +35,12 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
     <div className="mt-[10px] px-[10px]">
       <section
         id="top"
-        className={`relative flex w-full mx-auto max-w-[1280px] items-end overflow-hidden bg-background rounded-[16px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] ${mobileAspectClass}`}
+        className={`relative flex w-full mx-auto max-w-[1280px] items-end overflow-hidden bg-background rounded-[16px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 h-screen sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] sm:rounded-[16px] ${mobileAspectClass}`}
+        style={{
+          backgroundImage: 'url(/hero-mobile.jfif)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
       >
       {isVideoMode ? (
         <video
