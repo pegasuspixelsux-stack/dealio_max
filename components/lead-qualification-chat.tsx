@@ -139,7 +139,8 @@ export function LeadQualificationChat() {
   };
 
   return (
-    <div className="block md:hidden rounded-[16px] bg-slate-900/95 border border-slate-700 overflow-hidden flex flex-col h-80">
+    <div className="block md:hidden space-y-2">
+      <div className="rounded-[16px] bg-slate-900/95 border border-slate-700 overflow-hidden flex flex-col h-80">
       {/* Chat Messages */}
       <div
         ref={scrollRef}
@@ -248,16 +249,17 @@ export function LeadQualificationChat() {
           </button>
         ) : null}
       </div>
-    </div>
+      </div>
 
-    {/* Inventory Link - Outside Chat */}
-    <div className="text-center mt-2">
-      <button
-        onClick={handleInventoryLink}
-        className="text-xs text-slate-400 hover:text-white underline cursor-pointer"
-      >
-        Buscar en nuestro inventario
-      </button>
+      {/* Inventory Link - Outside Chat */}
+      <div className="text-center">
+        <button
+          onClick={handleInventoryLink}
+          className="text-xs text-slate-400 hover:text-white underline cursor-pointer"
+        >
+          Buscar en nuestro inventario
+        </button>
+      </div>
     </div>
   );
 }
