@@ -40,7 +40,7 @@ export function CarGrid({
               placeholder="Buscar marca, modelo, o año..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded-none border border-border-strong bg-surface px-10 py-2.5 text-[0.9rem] text-foreground placeholder:text-muted focus-visible:border-foreground/50 focus-visible:outline-none"
+              className="w-full rounded-[12px] border border-border-strong bg-surface px-10 py-2.5 text-[0.9rem] text-foreground placeholder:text-muted focus-visible:border-foreground/50 focus-visible:outline-none"
             />
           </div>
 
