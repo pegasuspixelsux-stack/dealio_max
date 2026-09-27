@@ -248,16 +248,16 @@ export function LeadQualificationChat() {
           </button>
         ) : null}
       </div>
+    </div>
 
-      {/* Inventory Link */}
-      <div className="border-t border-slate-700 px-3 py-2 bg-slate-950 text-center">
-        <button
-          onClick={handleInventoryLink}
-          className="text-xs text-slate-400 hover:text-white underline cursor-pointer"
-        >
-          Buscar en nuestro inventario
-        </button>
-      </div>
+    {/* Inventory Link - Outside Chat */}
+    <div className="text-center mt-2">
+      <button
+        onClick={handleInventoryLink}
+        className="text-xs text-slate-400 hover:text-white underline cursor-pointer"
+      >
+        Buscar en nuestro inventario
+      </button>
     </div>
   );
 }
