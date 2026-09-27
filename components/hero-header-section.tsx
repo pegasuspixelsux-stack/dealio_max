@@ -4,13 +4,12 @@ import React from 'react';
 
 export const HeroHeaderSection: React.FC = () => {
   return (
-    <div className="w-full flex flex-col">
-      {/* Sticky Header Wrapper: Keeps Row 1 & Row 2 pinned together at top = 0 */}
-      <div className="sticky top-0 z-50 w-full flex flex-col shrink-0">
-
-        {/* Row 1: Top Black Stripe (60px) */}
-        <div className="w-full h-[60px] bg-black text-white flex items-center px-4 md:px-8 border-b border-white/10">
-          <div className="mx-auto w-full max-w-7xl flex items-center justify-between text-xs md:text-sm font-medium">
+    <div className="w-full">
+      {/* Sticky Top Header Container (Sticky Row 1 + Row 2) */}
+      <div className="sticky top-0 z-50 w-full">
+        {/* Row 1: Top Black Stripe (40px high) */}
+        <div className="h-[40px] w-full bg-black text-white flex items-center px-4 md:px-8">
+          <div className="mx-auto w-full max-w-7xl flex items-center justify-between text-xs font-medium">
             <span>📍 Punta del Este Branch • Open Today until 7:00 PM</span>
             <div className="flex items-center gap-4">
               <a href="tel:+59800000000" className="hover:underline">📞 Direct Sales</a>
@@ -20,8 +19,8 @@ export const HeroHeaderSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Row 2: Top Nav (80px, matching page background) */}
-        <header className="w-full h-[80px] bg-white border-b border-slate-100 flex items-center px-4 md:px-8 shadow-sm">
+        {/* Row 2: Top Nav (60px high, background-matched) */}
+        <header className="h-[60px] w-full bg-white border-b border-slate-100 flex items-center px-4 md:px-8">
           <div className="mx-auto w-full max-w-7xl flex items-center justify-between">
             <div className="text-xl font-bold tracking-tight text-slate-900">
               DEALIO<span className="text-indigo-600">MAX</span>
@@ -39,9 +38,9 @@ export const HeroHeaderSection: React.FC = () => {
         </header>
       </div>
 
-      {/* Row 3: Slideshow Hero Section (Placed directly below header, scrolls behind sticky header) */}
+      {/* Row 3: Slideshow Hero Section (Sits cleanly below Row 2) */}
       <section className="relative w-full">
-        {/* Your existing slideshow and internal text blocks remain untouched here */}
+        {/* Existing slideshow and internal text blocks stay untouched here */}
       </section>
     </div>
   );
