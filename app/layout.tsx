@@ -44,6 +44,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col bg-background text-foreground">
         {/* Fixed black stripe above navbar */}
         <div className="fixed top-0 left-0 right-0 h-2 bg-black z-[9999]" />
+        {/* Fixed white stripe matching navbar height */}
+        <div className="fixed top-2 left-0 right-0 h-10 bg-white z-30" />
         <Script id="theme-init" strategy="beforeInteractive">
           {`try {
   var theme = localStorage.getItem('theme');
