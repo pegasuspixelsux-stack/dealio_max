@@ -44,7 +44,7 @@ export function CarGrid({
             />
           </div>
 
-          <div className="flex flex-shrink-0 items-center gap-1 border border-border-strong p-1">
+          <div className="md:hidden flex flex-shrink-0 items-center gap-1 border border-border-strong p-1">
             <button
               type="button"
               onClick={() => setMobileView("single")}
