@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar";
+import { HeroTopNav } from "@/components/hero-top-nav";
 import { Hero } from "@/components/hero";
 import { WhyChooseUs } from "@/components/why-choose-us";
 import { FinanceTabs } from "@/components/finance-tabs";
@@ -34,7 +34,7 @@ export default async function Home() {
 
   return (
     <>
-      <Navbar />
+      <HeroTopNav />
       <main className="flex-1 pt-9 sm:pt-0">
         <Hero initialSettings={initialSiteSettings} />
 

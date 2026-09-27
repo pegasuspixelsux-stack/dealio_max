@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Hurricane, Inter } from "next/font/google";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TopStripe } from "@/components/top-stripe";
+import { HeroTopNav } from "@/components/hero-top-nav";
 import "./globals.css";
 
 const geistSans = Geist({
