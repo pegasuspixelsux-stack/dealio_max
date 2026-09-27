@@ -34,7 +34,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
   return (
     <section
       id="top"
-      className={`relative flex mx-auto sm:max-w-[1440px] items-end overflow-hidden bg-background rounded-[16px] px-3 sm:px-6 lg:px-8 sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] ${mobileAspectClass}`}
+      className={`relative flex mx-auto sm:sm:max-w-[1440px] items-end overflow-hidden bg-background rounded-[16px] px-3 sm:px-6 lg:px-8 sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] ${mobileAspectClass}`}
     >
       {isVideoMode ? (
         <video
@@ -79,7 +79,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
         className="absolute inset-x-0 bottom-0 z-10 px-4 pb-6 sm:px-8 sm:pb-16"
       >
-        <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-3 text-left">
+        <div className="mx-auto flex w-full sm:max-w-[1440px] flex-col gap-3 text-left">
           {/* Desktop Layout: Single column on left */}
           <div className="hidden sm:block w-1/2">
             <div className="mb-4">

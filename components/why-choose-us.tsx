@@ -37,7 +37,7 @@ const PILLARS = [
 export function WhyChooseUs() {
   return (
     <section id="about" className="bg-surface-2 px-3 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="mx-auto sm:max-w-[1440px]">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Left Column: Text + 2x2 Grid of Pillars */}
           <div className="flex flex-col gap-6">

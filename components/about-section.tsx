@@ -4,7 +4,7 @@ import React from 'react';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section className="mx-auto max-w-[1440px] px-4 py-12 md:px-8">
+    <section className="mx-auto sm:max-w-[1440px] px-4 py-12 md:px-8">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
         {/* Left Column */}
         <div className="flex flex-col space-y-4">
