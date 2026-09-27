@@ -107,26 +107,10 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
             </p>
           </div>
 
-          {/* Mobile Layout: 2-column grid */}
-          <div className="block sm:hidden space-y-4">
+          {/* Mobile Layout: Chat Widget Only */}
+          <div className="block sm:hidden">
             {/* Lead Chat Widget */}
             <LeadQualificationChat />
-
-            <div className="grid grid-cols-2 gap-4 items-center">
-              <div className="flex flex-col gap-2">
-                <div className="mb-1">
-                  <SocialProofBadge rating={4.5} simplified />
-                </div>
-                <h1 className="font-heading text-xl font-bold leading-tight text-white">
-                  Excelencia<br />Automotriz.
-                </h1>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-[0.85rem] leading-relaxed text-white/90">
-                  Una cuidada selección de vehículos que combinan diseño, rendimiento y absoluta tranquilidad.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </motion.div>
