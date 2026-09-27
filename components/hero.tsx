@@ -7,6 +7,7 @@ import { MapPin } from "lucide-react";
 import { fadeUp, staggerContainer } from "@/lib/motion";
 import { useSiteSettings, type SiteSettings } from "@/lib/firebase/site-settings";
 import { SocialProofBadge } from "@/components/social-proof-badge";
+import { LeadQualificationChat } from "@/components/lead-qualification-chat";
 
 const SLIDE_INTERVAL = 6000;
 
@@ -107,9 +108,12 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           </div>
 
           {/* Mobile Layout: 2-column grid */}
-          <div className="block sm:hidden">
+          <div className="block sm:hidden space-y-4">
+            {/* Lead Chat Widget */}
+            <LeadQualificationChat />
+
             {/* Widget Box */}
-            <div className="mb-4 rounded-[16px] border-[5px] border-white bg-black h-32 flex items-center justify-center shadow-lg">
+            <div className="rounded-[16px] border-[5px] border-white bg-black h-32 flex items-center justify-center shadow-lg">
               <div className="text-center">
                 <p className="text-sm font-medium text-white/90">Vehículos Premium Curados</p>
               </div>
