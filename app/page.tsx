@@ -38,7 +38,7 @@ export default async function Home() {
       <main className="flex-1">
         <Hero initialSettings={initialSiteSettings} />
 
-        <div className="pt-1 md:pt-5">
+        <div className="pt-0 md:pt-4">
           <CarGrid initialCars={initialCars} initialSettings={initialSiteSettings} />
         </div>
 
