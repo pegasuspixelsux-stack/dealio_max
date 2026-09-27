@@ -21,8 +21,8 @@ export const HeroTopNav: React.FC = () => {
     <header
       className={`fixed top-8 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 backdrop-blur-md shadow-sm text-slate-900 border-b border-slate-200/50'
-          : 'bg-gradient-to-b from-black/80 via-black/40 to-transparent text-white'
+          ? 'bg-white/85 backdrop-blur-md shadow-sm text-slate-900 border-b border-slate-200/50'
+          : 'bg-black/70 text-white'
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 md:py-2 md:px-6">
