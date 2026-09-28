@@ -132,12 +132,12 @@ export function LeadQualificationChat() {
   };
 
   return (
-    <div className="block md:hidden space-y-2">
-      <div className="rounded-[16px] bg-slate-900/95 border border-slate-700 overflow-hidden flex flex-col h-80">
+    <div className="block md:hidden w-[90%] mx-auto space-y-2">
+      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-80 sm:h-96">
       {/* Chat Messages */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-y-auto p-4 space-y-3 bg-slate-950"
+        className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50"
       >
         {messages.map((msg) => (
           <div
@@ -148,7 +148,7 @@ export function LeadQualificationChat() {
               className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
                 msg.type === "user"
                   ? "bg-indigo-600 text-white rounded-br-none"
-                  : "bg-slate-800 text-slate-100 rounded-bl-none"
+                  : "bg-gray-200 text-gray-900 rounded-bl-none"
               }`}
             >
               {msg.text}
@@ -158,7 +158,7 @@ export function LeadQualificationChat() {
       </div>
 
       {/* Options or Input */}
-      <div className="border-t border-slate-700 p-3 bg-slate-900 space-y-2 max-h-40 overflow-y-auto">
+      <div className="border-t border-gray-200 p-3 bg-white space-y-2 max-h-40 overflow-y-auto">
         {showContactForm ? (
           <div className="space-y-2">
             <input
@@ -166,14 +166,14 @@ export function LeadQualificationChat() {
               placeholder="Nombre completo"
               value={contactName}
               onChange={(e) => setContactName(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded text-white text-sm placeholder-slate-400 focus:outline-none focus:border-indigo-600"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-600"
             />
             <input
               type="tel"
               placeholder="Número de teléfono"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded text-white text-sm placeholder-slate-400 focus:outline-none focus:border-indigo-600"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-600"
             />
             <div className="space-y-1">
               <input
@@ -182,9 +182,9 @@ export function LeadQualificationChat() {
                 value={whatsappNumber}
                 onChange={(e) => setWhatsappNumber(e.target.value)}
                 disabled={sameAsPhone}
-                className="w-full px-3 py-2 bg-slate-800 border border-slate-600 rounded text-white text-sm placeholder-slate-400 focus:outline-none focus:border-indigo-600 disabled:opacity-50"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-600 disabled:opacity-50"
               />
-              <label className="flex items-center gap-2 text-xs text-slate-400 cursor-pointer">
+              <label className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
                 <input
                   type="checkbox"
                   checked={sameAsPhone}
@@ -207,7 +207,7 @@ export function LeadQualificationChat() {
               <button
                 key={option}
                 onClick={() => handleOptionSelect(option)}
-                className="w-full text-left text-xs px-3 py-2 rounded-full bg-slate-800 hover:bg-indigo-600 text-white border border-slate-700 transition"
+                className="w-full text-left text-xs px-3 py-2 rounded-full bg-gray-100 hover:bg-indigo-600 text-gray-900 hover:text-white border border-gray-300 hover:border-indigo-600 transition"
               >
                 {option}
               </button>
@@ -221,7 +221,7 @@ export function LeadQualificationChat() {
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-              className="flex-1 px-3 py-2 bg-slate-800 border border-slate-600 rounded text-white text-sm placeholder-slate-400 focus:outline-none focus:border-indigo-600"
+              className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-600"
             />
             <button
               onClick={handleSendMessage}
@@ -248,7 +248,7 @@ export function LeadQualificationChat() {
       <div className="text-center">
         <button
           onClick={handleInventoryLink}
-          className="text-xs text-slate-400 hover:text-white underline cursor-pointer"
+          className="text-xs text-gray-600 hover:text-indigo-600 underline cursor-pointer"
         >
           Buscar en nuestro inventario
         </button>

@@ -10,6 +10,7 @@ import {
   Users,
   Settings,
   LogOut,
+  MessageSquare,
 } from "lucide-react";
 import { logout, type CurrentUser } from "@/lib/auth";
 
@@ -17,6 +18,7 @@ const NAV_LINKS = [
   { label: "Panel de Control", href: "/dashboard", icon: LayoutDashboard },
   { label: "Inventario", href: "/dashboard/inventory", icon: Car },
   { label: "Prospectos", href: "/dashboard/leads", icon: Target },
+  { label: "Chat", href: "/dashboard/chat-config", icon: MessageSquare },
   { label: "Contacto", href: "/dashboard/contact", icon: Mail },
   { label: "Usuarios", href: "/dashboard/users", icon: Users },
 ];

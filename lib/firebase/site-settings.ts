@@ -19,6 +19,18 @@ const DOC_ID = "site";
 export type HeroMode = "slideshow" | "video";
 export type MobileAspectRatio = "16/9" | "1/1";
 
+export interface ChatQuestion {
+  id: string;
+  step: number;
+  question: string;
+  placeholder?: string;
+}
+
+export interface ChatOptions {
+  step: number;
+  options: string[];
+}
+
 export interface SiteSettings {
   heroMode: HeroMode;
   heroVideoUrl: string | null;
@@ -36,6 +48,8 @@ export interface SiteSettings {
   colorThemeColor: string;
   colorThemeTextMode: ColorThemeTextMode;
   secondaryColor: string;
+  chatQuestions: ChatQuestion[];
+  chatOptions: ChatOptions[];
 }
 
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
@@ -56,6 +70,19 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   colorThemeColor: COLOR_THEME_PRESETS[DEFAULT_COLOR_THEME].color,
   colorThemeTextMode: "auto",
   secondaryColor: DEFAULT_SECONDARY_COLOR,
+  chatQuestions: [
+    { id: "q1", step: 0, question: "¡Hola! Bienvenido a Dealio Max 🚗. ¿Cómo te llamas?", placeholder: "Tu nombre..." },
+    { id: "q2", step: 1, question: "¿Qué tipo de vehículo estás buscando?" },
+    { id: "q3", step: 2, question: "¡Excelente elección! ¿Cuál es tu presupuesto estimado?" },
+    { id: "q4", step: 3, question: "¿Estás listo para comprar ahora o necesitas financiamiento?" },
+    { id: "q5", step: 4, question: "¿Cómo prefieres continuar?" },
+  ],
+  chatOptions: [
+    { step: 1, options: ["Sedán", "Cupé", "SUV", "Pick-up"] },
+    { step: 2, options: ["USD 0 - 5.000", "USD 5.000 - 10.000", "Más de USD 10.000", "Prefiero no decirlo"] },
+    { step: 3, options: ["Pago contado (Listo para comprar)", "Necesito financiamiento", "Prefiero no decirlo"] },
+    { step: 4, options: ["Ver inventario filtrado ahora", "Que un asesor me contacte"] },
+  ],
 };
 
 const HEX_PATTERN = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i;
@@ -107,6 +134,28 @@ function toSiteSettings(data: Record<string, unknown> | undefined): SiteSettings
     typeof secondaryColor === "string" && HEX_PATTERN.test(secondaryColor.trim())
       ? secondaryColor.trim()
       : DEFAULT_SITE_SETTINGS.secondaryColor;
+
+  result.chatQuestions = Array.isArray(data.chatQuestions)
+    ? data.chatQuestions.filter(
+        (q): q is ChatQuestion =>
+          typeof q === "object" &&
+          q !== null &&
+          typeof q.id === "string" &&
+          typeof q.step === "number" &&
+          typeof q.question === "string"
+      )
+    : DEFAULT_SITE_SETTINGS.chatQuestions;
+
+  result.chatOptions = Array.isArray(data.chatOptions)
+    ? data.chatOptions.filter(
+        (o): o is ChatOptions =>
+          typeof o === "object" &&
+          o !== null &&
+          typeof o.step === "number" &&
+          Array.isArray(o.options) &&
+          o.options.every((opt): opt is string => typeof opt === "string")
+      )
+    : DEFAULT_SITE_SETTINGS.chatOptions;
 
   return result;
 }

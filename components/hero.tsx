@@ -1,44 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
-import { MapPin } from "lucide-react";
-import { fadeUp, staggerContainer } from "@/lib/motion";
+import { motion } from "framer-motion";
 import { useSiteSettings, type SiteSettings } from "@/lib/firebase/site-settings";
 import { SocialProofBadge } from "@/components/social-proof-badge";
 import { LeadQualificationChat } from "@/components/lead-qualification-chat";
 
-const SLIDE_INTERVAL = 6000;
-
 export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
-  const [slide, setSlide] = useState(0);
   const { settings } = useSiteSettings(initialSettings);
   const isVideoMode = settings.heroMode === "video" && Boolean(settings.heroVideoUrl);
-  const slides = settings.heroSlideshowImages.map((src, index) => ({
-    src,
-    alt: `Foto ${index + 1} del carrusel principal`,
-  }));
-  const hasSlides = slides.length > 0;
-  const activeSlide = hasSlides ? slide % slides.length : 0;
-
-  useEffect(() => {
-    if (isVideoMode || !hasSlides) return;
-    const id = setInterval(() => {
-      setSlide((current) => (current + 1) % slides.length);
-    }, SLIDE_INTERVAL);
-    return () => clearInterval(id);
-  }, [isVideoMode, hasSlides, slides.length]);
-
-  const mobileAspectClass = settings.mobileAspectRatio === "1/1" ? "aspect-square" : "aspect-video";
 
   return (
-    <div className="mt-[10px] px-[10px]">
-      <section
-        id="top"
-        className={`relative flex w-full mx-auto max-w-[1280px] items-end bg-background rounded-[16px] px-4 py-4 sm:px-6 sm:py-6 lg:px-8 h-screen sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] sm:rounded-[16px] overflow-clip ${mobileAspectClass}`}
+    <section
+      id="top"
+      className="relative flex w-full items-end bg-background h-screen sm:aspect-auto sm:h-[67.5vh] sm:min-h-[480px] overflow-hidden aspect-video"
         style={{
-          backgroundImage: 'url(/hero-mobile.jpg)',
+          backgroundImage: 'url(/yellow_camaro.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -55,35 +32,25 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           <source src={settings.heroVideoUrl ?? undefined} />
         </video>
       ) : (
-        hasSlides && (
-          <AnimatePresence initial={false}>
-            <motion.div
-              key={activeSlide}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1.2, ease: "easeInOut" }}
-              className="hidden sm:block absolute inset-0"
-            >
-              <Image
-                src={slides[activeSlide].src}
-                alt={slides[activeSlide].alt}
-                fill
-                priority={activeSlide === 0}
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-            </motion.div>
-          </AnimatePresence>
-        )
+        <Image
+          src="/yellow_camaro.jpg"
+          alt="Yellow Camaro Hero Background"
+          fill
+          priority
+          sizes="100vw"
+          className="hidden sm:block object-cover object-center"
+        />
       )}
 
       <div className="hidden sm:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent" />
 
       {/* Mobile Logo/Title - Top Center */}
-      <div className="sm:hidden absolute inset-x-0 top-0 z-20 flex items-center justify-center pt-8">
+      <div className="sm:hidden absolute inset-x-0 top-0 z-20 flex items-center justify-center pt-4">
         <div className="text-center">
-          <div className="text-4xl font-bold text-white tracking-tight">DEALIOMAX</div>
+          <div className="text-4xl font-bold tracking-tight">
+            <span className="text-white">DEALIO</span>
+            <span className="text-primary">MAX</span>
+          </div>
         </div>
       </div>
 
@@ -91,11 +58,11 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-        className="absolute inset-0 z-10 px-4 py-6 sm:px-8 sm:py-16 sm:pb-16 sm:bottom-0 flex flex-col justify-end"
+        className="absolute inset-0 z-10 pt-4 pb-6 sm:py-16 sm:pb-16 sm:bottom-0 flex flex-col justify-end"
       >
-        <div className="mx-auto flex w-full sm:max-w-[1280px] flex-col gap-3 text-left">
-          {/* Desktop Layout: Single column on left */}
-          <div className="hidden sm:block w-1/2">
+        {/* Desktop Layout: Single column on left */}
+        <div className="hidden sm:block px-6 lg:px-8">
+          <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-3 text-left">
             <div className="mb-4">
               <SocialProofBadge rating={4.5} reviewCount={1200} />
             </div>
@@ -106,38 +73,15 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
               Una cuidada selección de vehículos que combinan diseño, rendimiento y absoluta tranquilidad para su próximo camino.
             </p>
           </div>
+        </div>
 
-          {/* Mobile Layout: Chat Widget Only */}
-          <div className="block sm:hidden">
-            {/* Lead Chat Widget */}
-            <LeadQualificationChat />
-          </div>
+        {/* Mobile Layout: Chat Widget Only - Full Width */}
+        <div className="block sm:hidden px-3 w-full">
+          {/* Lead Chat Widget */}
+          <LeadQualificationChat />
         </div>
       </motion.div>
 
-      {!isVideoMode && hasSlides && (
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          className="hidden sm:flex absolute right-[-4px] top-1/2 z-10 -translate-y-1/2 flex-row gap-2 rotate-90 sm:right-[-4px]"
-        >
-          {slides.map((item, index) => (
-            <button
-              key={item.src}
-              type="button"
-              aria-label={`Mostrar diapositiva ${index + 1}`}
-              onClick={() => setSlide(index)}
-              className={`h-1.5 rounded-none transition-all duration-300 ${
-                index === activeSlide
-                  ? "w-6 bg-foreground"
-                  : "w-1.5 bg-foreground/40 hover:bg-foreground/70"
-              }`}
-            />
-          ))}
-        </motion.div>
-      )}
-      </section>
-    </div>
+    </section>
   );
 }
