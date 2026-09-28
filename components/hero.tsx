@@ -42,7 +42,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
         />
       )}
 
-      <div className="hidden sm:block absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent" />
+      <div className="hidden sm:block absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-black/90 to-transparent" />
 
       {/* Mobile Logo/Title - Top Center */}
       <div className="sm:hidden absolute inset-x-0 top-0 z-20 flex items-center justify-center pt-4">
