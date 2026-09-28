@@ -140,19 +140,33 @@ export function LeadQualificationChat() {
         className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50"
       >
         {messages.map((msg) => (
-          <div
-            key={msg.id}
-            className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}
-          >
+          <div key={msg.id}>
             <div
-              className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
-                msg.type === "user"
-                  ? "bg-indigo-600 text-white rounded-br-none"
-                  : "bg-gray-200 text-gray-900 rounded-bl-none"
-              }`}
+              className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}
             >
-              {msg.text}
+              <div
+                className={`max-w-xs px-3 py-2 rounded-lg text-sm ${
+                  msg.type === "user"
+                    ? "bg-indigo-600 text-white rounded-br-none"
+                    : "bg-gray-200 text-gray-900 rounded-bl-none"
+                }`}
+              >
+                {msg.text}
+              </div>
             </div>
+            {msg.type === "bot" && messages.indexOf(msg) === messages.length - 1 && step > 0 && step < 5 && renderOptions().length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-3">
+                {renderOptions().map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleOptionSelect(option)}
+                    className="text-left text-xs px-3 py-2 rounded-full bg-gray-100 hover:bg-indigo-600 text-gray-900 hover:text-white border border-gray-300 hover:border-indigo-600 transition whitespace-nowrap"
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -200,18 +214,6 @@ export function LeadQualificationChat() {
             >
               Enviar datos
             </button>
-          </div>
-        ) : step > 0 && step < 5 && renderOptions().length > 0 ? (
-          <div className="flex flex-wrap gap-2">
-            {renderOptions().map((option) => (
-              <button
-                key={option}
-                onClick={() => handleOptionSelect(option)}
-                className="text-left text-xs px-3 py-2 rounded-full bg-gray-100 hover:bg-indigo-600 text-gray-900 hover:text-white border border-gray-300 hover:border-indigo-600 transition whitespace-nowrap"
-              >
-                {option}
-              </button>
-            ))}
           </div>
         ) : step === 0 ? (
           <div className="flex gap-2">
