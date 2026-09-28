@@ -153,7 +153,7 @@ function toSiteSettings(data: Record<string, unknown> | undefined): SiteSettings
           o !== null &&
           typeof o.step === "number" &&
           Array.isArray(o.options) &&
-          o.options.every((opt): opt is string => typeof opt === "string")
+          o.options.every((opt: unknown): opt is string => typeof opt === "string")
       )
     : DEFAULT_SITE_SETTINGS.chatOptions;
 
