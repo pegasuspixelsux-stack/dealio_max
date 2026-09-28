@@ -133,7 +133,7 @@ export function LeadQualificationChat() {
 
   return (
     <div className="block md:hidden w-[90%] mx-auto space-y-2">
-      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-80 sm:h-96">
+      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-96 sm:h-80">
       {/* Chat Messages */}
       <div
         ref={scrollRef}
@@ -172,7 +172,7 @@ export function LeadQualificationChat() {
       </div>
 
       {/* Options or Input */}
-      <div className="border-t border-gray-200 p-3 bg-white space-y-2 max-h-40 overflow-y-auto">
+      <div className="border-t border-gray-200 p-3 bg-white space-y-2">
         {showContactForm ? (
           <div className="space-y-2">
             <input
