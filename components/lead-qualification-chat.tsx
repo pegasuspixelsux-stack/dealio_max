@@ -133,7 +133,7 @@ export function LeadQualificationChat() {
 
   return (
     <div className="block md:hidden w-[90%] mx-auto space-y-2">
-      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-96 sm:h-80">
+      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-72 sm:h-64">
       {/* Chat Messages */}
       <div
         ref={scrollRef}
