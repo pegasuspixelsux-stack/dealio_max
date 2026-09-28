@@ -202,12 +202,12 @@ export function LeadQualificationChat() {
             </button>
           </div>
         ) : step > 0 && step < 5 && renderOptions().length > 0 ? (
-          <div className="space-y-2">
+          <div className="flex flex-wrap gap-2">
             {renderOptions().map((option) => (
               <button
                 key={option}
                 onClick={() => handleOptionSelect(option)}
-                className="w-full text-left text-xs px-3 py-2 rounded-full bg-gray-100 hover:bg-indigo-600 text-gray-900 hover:text-white border border-gray-300 hover:border-indigo-600 transition"
+                className="text-left text-xs px-3 py-2 rounded-full bg-gray-100 hover:bg-indigo-600 text-gray-900 hover:text-white border border-gray-300 hover:border-indigo-600 transition whitespace-nowrap"
               >
                 {option}
               </button>
