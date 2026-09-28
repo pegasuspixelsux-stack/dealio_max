@@ -13,7 +13,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
   return (
     <section
       id="top"
-      className="relative flex w-full items-end bg-background h-[85vh] sm:aspect-auto sm:h-[57vh] sm:min-h-[480px] overflow-hidden aspect-video"
+      className="relative flex w-full items-end bg-background h-[90vh] sm:aspect-auto sm:h-[60vh] sm:min-h-[480px] overflow-hidden aspect-video"
         style={{
           backgroundImage: 'url(/yellow_camaro.jpg)',
           backgroundSize: 'cover',
