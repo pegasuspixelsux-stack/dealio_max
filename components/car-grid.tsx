@@ -23,7 +23,7 @@ export function CarGrid({
   const { items: cars, loading, error } = useInventory(initialCars);
   const { settings } = useSiteSettings(initialSettings);
   const [searchQuery, setSearchQuery] = useState("");
-  const [mobileView, setMobileView] = useState<MobileView>("single");
+  const [mobileView, setMobileView] = useState<MobileView>("list");
   const visibleCars = cars.filter((car) =>
     `${car.year} ${car.make} ${car.model}`
       .toLowerCase()
