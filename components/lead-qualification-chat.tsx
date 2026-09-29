@@ -147,17 +147,20 @@ export function LeadQualificationChat() {
 
   return (
     <div className="block md:hidden w-[90%] mx-auto space-y-1">
-      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-72 sm:h-64 relative">
-      {/* Close Button */}
-      <button
-        onClick={() => setIsOpen(false)}
-        className="absolute top-3 right-3 z-50 p-1 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition"
-        aria-label="Cerrar chat"
-      >
-        <X size={18} />
-      </button>
+      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-72 sm:h-64">
+        {/* Chat Header */}
+        <div className="flex items-center justify-between bg-gradient-to-r from-indigo-600 to-indigo-700 px-4 py-3">
+          <h3 className="text-white font-semibold text-sm">Dealio Max</h3>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="p-1 text-white hover:bg-indigo-800 rounded-full transition"
+            aria-label="Cerrar chat"
+          >
+            <X size={18} />
+          </button>
+        </div>
 
-      {/* Chat Messages */}
+        {/* Chat Messages */}
       <div
         ref={scrollRef}
         className="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50"
