@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { Send } from "lucide-react";
+import { Send, X } from "lucide-react";
 
 interface Message {
   id: string;
@@ -10,6 +10,7 @@ interface Message {
 }
 
 export function LeadQualificationChat() {
+  const [isOpen, setIsOpen] = useState(true);
   const [step, setStep] = useState(0);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -131,9 +132,31 @@ export function LeadQualificationChat() {
     inventorySection?.scrollIntoView({ behavior: "smooth" });
   };
 
+  if (!isOpen) {
+    return (
+      <div className="block md:hidden w-[90%] mx-auto">
+        <button
+          onClick={() => setIsOpen(true)}
+          className="w-full px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-[16px] text-sm font-medium transition"
+        >
+          Abrir Chat
+        </button>
+      </div>
+    );
+  }
+
   return (
     <div className="block md:hidden w-[90%] mx-auto space-y-1">
-      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-72 sm:h-64">
+      <div className="rounded-[16px] bg-white border border-gray-200 overflow-hidden flex flex-col h-72 sm:h-64 relative">
+      {/* Close Button */}
+      <button
+        onClick={() => setIsOpen(false)}
+        className="absolute top-3 right-3 z-50 p-1 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition"
+        aria-label="Cerrar chat"
+      >
+        <X size={18} />
+      </button>
+
       {/* Chat Messages */}
       <div
         ref={scrollRef}
