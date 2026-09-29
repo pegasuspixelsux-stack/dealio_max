@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useSiteSettings, type SiteSettings } from "@/lib/firebase/site-settings";
 import { SocialProofBadge } from "@/components/social-proof-badge";
 import { LeadQualificationChat } from "@/components/lead-qualification-chat";
+import { HeroNav } from "@/components/hero-nav";
 
 export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
   const { settings } = useSiteSettings(initialSettings);
@@ -20,6 +21,7 @@ export function Hero({ initialSettings }: { initialSettings?: SiteSettings }) {
           backgroundPosition: 'center',
         }}
       >
+      <HeroNav />
       {isVideoMode ? (
         <video
           key={settings.heroVideoUrl}
