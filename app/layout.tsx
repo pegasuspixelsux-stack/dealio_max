@@ -31,16 +31,17 @@ export const metadata: Metadata = {
   title: "Dealio — Encuentra tu próxima máquina de precisión",
   description:
     "Dealio es una concesionaria de alta gama que ofrece una selección curada de sedanes, SUVs y vehículos de alto rendimiento diseñados con precisión.",
+  viewport: "width=device-width, initial-scale=1.0",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${script.variable} ${heading.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${script.variable} ${heading.variable} h-full antialiased overflow-x-hidden`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground">
+      <body className="min-h-full flex flex-col bg-background text-foreground overflow-x-hidden">
         <Script id="theme-init" strategy="beforeInteractive">
           {`try {
   var theme = localStorage.getItem('theme');

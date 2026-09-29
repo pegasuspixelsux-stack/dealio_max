@@ -180,14 +180,14 @@ export function LeadQualificationChat() {
               placeholder="Nombre completo"
               value={contactName}
               onChange={(e) => setContactName(e.target.value)}
-              className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-600"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-base placeholder-gray-500 focus:outline-none focus:border-indigo-600"
             />
             <input
               type="tel"
               placeholder="Número de teléfono"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-600"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-base placeholder-gray-500 focus:outline-none focus:border-indigo-600"
             />
             <div className="space-y-1">
               <input
@@ -196,7 +196,7 @@ export function LeadQualificationChat() {
                 value={whatsappNumber}
                 onChange={(e) => setWhatsappNumber(e.target.value)}
                 disabled={sameAsPhone}
-                className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-600 disabled:opacity-50"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-base placeholder-gray-500 focus:outline-none focus:border-indigo-600 disabled:opacity-50"
               />
               <label className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
                 <input
@@ -223,7 +223,7 @@ export function LeadQualificationChat() {
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
-              className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-sm placeholder-gray-500 focus:outline-none focus:border-indigo-600"
+              className="flex-1 px-3 py-2 bg-white border border-gray-300 rounded text-gray-900 text-base placeholder-gray-500 focus:outline-none focus:border-indigo-600"
             />
             <button
               onClick={handleSendMessage}
