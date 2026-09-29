@@ -303,7 +303,7 @@ export function CarCard({
     <motion.article
       variants={fadeUp}
       className={`@container group relative flex cursor-pointer overflow-hidden rounded-[12px] bg-white shadow-sm transition-all duration-300 hover:shadow-md ${
-        mobileList ? "flex-row md:flex-col" : "flex-col"
+        mobileList ? "flex-row md:flex-col h-[150px] sm:h-auto md:h-auto" : "flex-col"
       }`}
     >
       <Link
@@ -361,7 +361,7 @@ export function CarCard({
       {/* Card Content (5-row hierarchy) */}
       <div
         className={`relative flex flex-col bg-surface-2 text-foreground ${
-          mobileList ? "w-1/2 px-3 py-2 md:w-full md:flex-1 md:justify-start md:gap-3 md:p-4" : "flex-1 justify-start gap-3 px-3 py-4 sm:p-4"
+          mobileList ? "w-1/2 px-3 py-2 overflow-hidden md:w-full md:flex-1 md:justify-start md:gap-3 md:p-4" : "flex-1 justify-start gap-3 px-3 py-4 sm:p-4"
         } ${mobileList ? "justify-between gap-0.5" : ""}`}
       >
         {/* Mobile arrow badge (top-right corner) */}
